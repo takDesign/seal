@@ -29,7 +29,7 @@ if (strstr($url, 'index.php') == false && strstr($url, 'signUp.php') == false) {
 <body <?= $bodyId ?>>
 	<header>
 		<nav class="clearfix">
-			<h1 id="logo"><a href="suggestions.php" title="home">Votelux</a></h1>
+			<h1 id="logo"><a href="suggestions.php" title="home">Seal</a></h1>
 			<?php
 			if (strstr($url, 'index.php') == false && strstr($url, 'signUp.php') == false) {
 				$msg = '<p>Hello <strong>' . $_SESSION["firstName"] . '</strong>, You have <strong class="points"></strong> points to vote.</p><ul><li><a href="suggestions.php">Home</a></li><li><a href="pageForm.php">Make a Suggestion</a></li><li><a href="logout.php">Logout</a></li></ul>';
