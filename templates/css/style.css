@@ -7,8 +7,8 @@
 
 html,
 body {
-  height: 100%;
   color: #fff;
+  background: #5d5d5d;
 }
 
 h1,
@@ -136,43 +136,6 @@ form .fieldset .imgPrev {
   display: block;
 }
 
-#loginPage,
-#signUp {
-  background: #ed213a;
-  /* fallback for old browsers */
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(220deg, #ff1919, #631c15);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(220deg, #ff1919, #631c15);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-size: 400% 400%;
-  animation: bgGradientMove 10s ease infinite;
-}
-
-@-webkit-keyframes bgGradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 51%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes bgGradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 51%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 #loginPage .wrapper,
 #signUp .wrapper {
   padding: 30px;
@@ -250,42 +213,6 @@ form .fieldset .imgPrev {
   text-decoration: none;
 }
 
-body {
-  background: #ed213a;
-  /* fallback for old browsers */
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(220deg, #ff1919, #631c15);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(220deg, #ff1919, #631c15);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-size: 400% 400%;
-  animation: bgGradientMove 10s ease infinite;
-}
-
-@-webkit-keyframes bgGradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 51%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes bgGradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 51%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 body header {
   width: 100%;
   background: #fff;
@@ -305,12 +232,22 @@ body header nav ul {
   margin: 30px;
 }
 
+@media only screen and (max-width: 1000px) {
+  body header nav ul {
+    float: none;
+  }
+  body header nav ul li a {
+    padding: 0 20px 0 0;
+  }
+}
+
 body header nav ul li {
   display: inline-block;
 }
 
 body header nav a {
   padding: 0 30px;
+  font-weight: 700;
 }
 
 body header nav a:hover {
@@ -324,6 +261,13 @@ body header nav a.active {
 body header nav p {
   color: #000;
   display: inline-block;
+}
+
+@media only screen and (max-width: 1000px) {
+  body header nav p {
+    display: block;
+    margin-left: 30px;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -359,23 +303,6 @@ body main .list a {
 
 body main .list a:hover {
   text-decoration: underline;
-}
-
-body main .d-table {
-  width: 100%;
-  table-layout: fixed;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-body main .d-table .d-table-cell {
-  padding: 10px;
-}
-
-body main .listHead {
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 18px;
-  text-transform: uppercase;
-  border: none;
 }
 
 body main .breadcrumbs {
@@ -416,14 +343,46 @@ main.inner .msg {
   margin-top: 30px;
 }
 
-#suggestions main .list .title {
+#suggestions main .list .listItem {
+  padding: 10px;
+  border-bottom: rgba(255, 255, 255, 0.2) 2px solid;
+}
+
+#suggestions main .list .listItem .voter {
+  font-weight: 700;
+  float: left;
+  margin-right: 10px;
+}
+
+#suggestions main .list .listItem .datePosted {
+  opacity: 0.7;
+  float: left;
+}
+
+#suggestions main .list .listItem .suggestionWrapper {
+  clear: both;
+  margin-bottom: 10px;
+}
+
+#suggestions main .list .listItem .suggestionWrapper .suggestionTitle {
   font-size: 20px;
   font-weight: bold;
+  text-decoration: none;
+  display: block;
+}
+
+#suggestions main .list .listItem .suggestionWrapper .suggestionTitle:hover {
   text-decoration: underline;
 }
 
-#suggestions main .list .vote {
+#suggestions main .list .listItem .suggestion {
+  opacity: 0.7;
+}
+
+#suggestions main .list .listItem .suggestion .support {
   display: inline-block;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 #suggestions main .list .vote i.material-icons {

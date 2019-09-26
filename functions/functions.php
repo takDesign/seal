@@ -2,7 +2,7 @@
 // function to connect to the DB
 function connect()
 {
-	$con = mysqli_connect("localhost", "takahiro_votelux", "{DJ!P~lRd-8b", "takahiro_votelux");
+	$con = mysqli_connect("localhost", "root", "", "seal");
 	return $con;
 }
 
@@ -42,13 +42,13 @@ function buildList()
 
 	$newhtml = "";
 	while ($record = mysqli_fetch_assoc($results)) {
-		$newhtml .= '<div class="d-table suggestion" data-suggestionid="' . $record['id'] . '">
-				<div class="d-table-cell"><a href="pageDetail.php?nPageID=' . $record['id'] . '" class="title">' . $record['strTitle'] . '</a></div>
-				<div class="d-table-cell">' . $record['dPosted'] . '</div>
-				<div class="d-table-cell">' . $record['strFirstName'] . '</div>
-				<div class="d-table-cell support" data-type="positive"></div>
-				<div class="d-table-cell"><a href="#" class="vote"><i class="material-icons">how_to_vote</i></a></div>
-			</div>';
+		$newhtml .= '<div class="listItem">
+				<div class="voter">' . $record['strFirstName'] . '</div>
+				<div class="datePosted">' . $record['dPosted'] . '</div>
+				<div class="suggestionWrapper"><a href="pageDetail.php?nPageID=' . $record['id'] . '" class="suggestionTitle">' . $record['strTitle'] . '</a></div>
+				<div class="suggestion" data-suggestionid="' . $record['id'] . '">
+				<a href="#" class="vote"><i class="material-icons">how_to_vote</i></a><div class="support" data-type="positive"></div>
+			</div></div>';
 	}
 
 	return $newhtml;
