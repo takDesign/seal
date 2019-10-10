@@ -2,7 +2,7 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
+-- Host: localhost
 -- Generation Time: Sep 24, 2019 at 11:09 PM
 -- Server version: 5.6.41-84.1
 -- PHP Version: 7.2.7
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `takahiro_votelux`
+-- Database: `seal`
 --
 
 -- --------------------------------------------------------
