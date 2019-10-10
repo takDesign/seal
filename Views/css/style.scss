@@ -1,0 +1,182 @@
+// COLORS ---------------------------------------------------------------------
+$orange: #d99c50; 	
+$rgbO: 217,156,80;
+
+$lightAqua:	#d1f9fa;
+$rgbLA: 209,249,250;
+
+$lightBlue:	#6bc4d1;
+$rgbLB: 107,196,209;
+
+$darkAqua:	#245e62;
+$rgbDA: 36,94,98;
+
+$white: whitesmoke;
+
+$gradient: linear-gradient(to bottom, $darkAqua 0%, $lightBlue 100%);
+
+// FONTS ----------------------------------------------------------------------
+$font: 'Raleway', sans-serif;
+
+@mixin fontBlack {
+    font-family: $font;
+    font-weight: 900;
+}
+
+@mixin fontBold {
+    font-family: $font;
+    font-weight: 700;
+}
+
+@mixin fontReg {
+    font-family: $font;
+    font-weight: 400;
+}
+
+@mixin fontLight {
+    font-family: $font;
+    font-weight: 300;
+}
+
+@mixin fontLightIt {
+    font-family: $font;
+    font-weight: 300;
+    font-style: italic;
+}
+
+//BUTTONS----------------------------------------------------------------------
+$btnRadius: 10rem;
+
+//primary*****************************
+.btn-primary {
+    background: $orange;
+    border-color: $orange;
+    border-radius: $btnRadius;
+}
+
+.btn-primary:hover {
+    background: $white;
+    color: $orange;
+    border-color: $orange;
+}
+
+.btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
+    color: $white;
+    background-color: $orange;
+    border-color: rgba(217,156,80,0.25);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+//secondary *****************************
+.btn-secondary {
+    background: $orange;
+    border-color: $orange;
+    border-radius: $btnRadius;
+    color: $white;
+}
+
+.btn-secondary:hover {
+    background: $orange;
+    color: $white;
+    border-color: $orange;
+}
+
+.btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active {
+    color: $white;
+    background-color: $orange;
+    border-color: rgba(217,156,80,0.25);
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+.btn-secondary.focus, .btn-secondary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+//outline *****************************
+.btn-outline-secondary {
+    border-color: $orange;
+    color: $orange;
+    border-radius: $btnRadius;
+}
+
+.btn-outline-secondary:hover {
+    background: $orange;
+    color: $white;
+    background-color: $orange;
+    border-color: $orange;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+    border-color: $orange;
+}
+
+.btn-outline-secondary:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+    color: $orange;
+    background-color: $white;
+    border-color: rgba(217,156,80,0.25);
+    border: 1px solid $orange;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+.btn-outline-secondary.focus, .btn-outline-secondary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+//LOGIN PAGE ---------------------------------------------------------------------------
+#loginPage {
+    background-image: url(./img/bg-login.php);
+}
+
+//FORMS------------------------------------------
+.form-control {
+    border-radius: .50rem;
+}
+
+.form-control:focus {
+    color: $lightBlue;
+    box-shadow: 0 0 0 .1rem rgba(107,196,209,1);
+}
+
+input {
+    @include fontReg;
+    color: $darkAqua;
+}
+
+#inputPassword {
+    color: $orange;
+}
+
+label {
+    @include fontReg;
+}
+
+.fieldset a {
+    transition: .6s ease;
+}
+
+.fieldset a:hover {
+    text-decoration: none;
+    color: $orange;
+    transition: .6s ease;
+}
+
+// .fieldset button {
+//     margin-top: 6rem;
+// }
+
+// .modal-footer {
+//     border-top: 1px solid transparent;
+// }

@@ -1,0 +1,122 @@
+.btn-primary {
+  background: #d99c50;
+  border-color: #d99c50;
+  border-radius: 10rem;
+}
+
+.btn-primary:hover {
+  background: whitesmoke;
+  color: #d99c50;
+  border-color: #d99c50;
+}
+
+.btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
+  color: whitesmoke;
+  background-color: #d99c50;
+  border-color: rgba(217, 156, 80, 0.25);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
+}
+
+.btn-secondary {
+  background: #d99c50;
+  border-color: #d99c50;
+  border-radius: 10rem;
+  color: whitesmoke;
+}
+
+.btn-secondary:hover {
+  background: #d99c50;
+  color: whitesmoke;
+  border-color: #d99c50;
+}
+
+.btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active {
+  color: whitesmoke;
+  background-color: #d99c50;
+  border-color: rgba(217, 156, 80, 0.25);
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
+}
+
+.btn-secondary.focus, .btn-secondary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
+}
+
+.btn-outline-secondary {
+  border-color: #d99c50;
+  color: #d99c50;
+  border-radius: 10rem;
+}
+
+.btn-outline-secondary:hover {
+  background: #d99c50;
+  color: whitesmoke;
+  background-color: #d99c50;
+  border-color: #d99c50;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+  border-color: #d99c50;
+}
+
+.btn-outline-secondary:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+  color: #d99c50;
+  background-color: whitesmoke;
+  border-color: rgba(217, 156, 80, 0.25);
+  border: 1px solid #d99c50;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
+}
+
+.btn-outline-secondary.focus, .btn-outline-secondary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
+}
+
+#loginPage {
+  background-image: url(./img/bg-login.php);
+}
+
+.form-control {
+  border-radius: .50rem;
+}
+
+.form-control:focus {
+  color: #6bc4d1;
+  box-shadow: 0 0 0 0.1rem #6bc4d1;
+}
+
+input {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  color: #245e62;
+}
+
+#inputPassword {
+  color: #d99c50;
+}
+
+label {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+.fieldset a {
+  transition: .6s ease;
+}
+
+.fieldset a:hover {
+  text-decoration: none;
+  color: #d99c50;
+  transition: .6s ease;
+}
