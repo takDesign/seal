@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Sep 24, 2019 at 11:09 PM
--- Server version: 5.6.41-84.1
--- PHP Version: 7.2.7
+-- Generation Time: Oct 10, 2019 at 01:32 AM
+-- Server version: 5.7.26
+-- PHP Version: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -69,6 +67,7 @@ CREATE TABLE `users` (
   `strEmail` varchar(255) NOT NULL,
   `strUserName` varchar(255) NOT NULL,
   `strPassword` varchar(255) NOT NULL,
+  `strAvatarName` varchar(255) NOT NULL,
   `nPoints` tinyint(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -76,18 +75,18 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `strFirstName`, `strLastName`, `strEmail`, `strUserName`, `strPassword`, `nPoints`) VALUES
-(1, 'Admin', 'Lastname', 'admin@admin.com', 'a', 'a', 0),
-(2, 'Bob', 'Dylan', 'bob@bob.com', 'bob', 'a', 10),
-(9, 'Jonathan', 'Sheppard', 'jonathan@vanarts.com', 'jonathan', 'a', 10),
-(10, 'Carolina', 'Uriarte', 'caroline@vanarts.com', 'carolina', 'a', 10),
-(11, 'Sam', 'Kelley', 'sam@vanarts.com', 'sam', 'a', 10),
-(12, 'Sham', 'Dhari', 'sham@vanarts.com', 'sham', 'a', 10),
-(15, 'Quinn', 'MacAskill', 'quinn@vanarts.com', 'quinn', 'a', 6),
-(16, 'Elisa', 'Cruz', 'elisa@vanarts.com', 'elisa', 'a', 7),
-(17, 'Nathan', 'Laggatt', 'nathan@vanarts.com', 'nathan', 'hotpink', 0),
-(25, 'Tak', 'Ito', 'tak@test', 'Username Test', 'password', 8),
-(26, 'test', 'test', 'test', 'test', 'test', 6);
+INSERT INTO `users` (`id`, `strFirstName`, `strLastName`, `strEmail`, `strUserName`, `strPassword`, `strAvatarName`, `nPoints`) VALUES
+(1, 'Admin', 'Lastname', 'admin@admin.com', 'a', 'a', '', 0),
+(2, 'Bob', 'Dylan', 'bob@bob.com', 'bob', 'a', '', 10),
+(9, 'Jonathan', 'Sheppard', 'jonathan@vanarts.com', 'jonathan', 'a', '', 10),
+(10, 'Carolina', 'Uriarte', 'caroline@vanarts.com', 'carolina', 'a', '', 10),
+(11, 'Sam', 'Kelley', 'sam@vanarts.com', 'sam', 'a', '', 10),
+(12, 'Sham', 'Dhari', 'sham@vanarts.com', 'sham', 'a', '', 10),
+(15, 'Quinn', 'MacAskill', 'quinn@vanarts.com', 'quinn', 'a', '', 6),
+(16, 'Elisa', 'Cruz', 'elisa@vanarts.com', 'elisa', 'a', '', 7),
+(17, 'Nathan', 'Laggatt', 'nathan@vanarts.com', 'nathan', 'hotpink', '', 0),
+(25, 'Tak', 'Ito', 'tak@test', 'Username Test', 'password', '', 8),
+(26, 'test', 'test', 'test', 'test', 'test', '', 6);
 
 -- --------------------------------------------------------
 
@@ -228,7 +227,6 @@ ALTER TABLE `suggestions`
 ALTER TABLE `votes`
   ADD CONSTRAINT `votes_ibfk_1` FOREIGN KEY (`nSuggestionsID`) REFERENCES `suggestions` (`id`),
   ADD CONSTRAINT `votes_ibfk_2` FOREIGN KEY (`nUsersID`) REFERENCES `users` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
