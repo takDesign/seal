@@ -1,0 +1,319 @@
+// COLORS ---------------------------------------------------------------------
+$orange: #d99c50; 	
+$rgbO: 217,156,80;
+
+$lightAqua:	#d1f9fa;
+$rgbLA: 209,249,250;
+
+$lightBlue:	#6bc4d1;
+$rgbLB: 107,196,209;
+
+$darkAqua:	#245e62;
+$rgbDA: 36,94,98;
+
+$white: whitesmoke;
+
+$lightGray: #E8E8E8;
+
+$gradient: linear-gradient(to bottom, $darkAqua 0%, $lightBlue 100%);
+
+// FONTS ----------------------------------------------------------------------
+$font: 'Raleway', sans-serif;
+
+@mixin fontBlack {
+    font-family: $font;
+    font-weight: 900;
+}
+
+@mixin fontBold {
+    font-family: $font;
+    font-weight: 700;
+}
+
+@mixin fontReg {
+    font-family: $font;
+    font-weight: 400;
+}
+
+@mixin fontLight {
+    font-family: $font;
+    font-weight: 300;
+}
+
+@mixin fontLightIt {
+    font-family: $font;
+    font-weight: 300;
+    font-style: italic;
+}
+
+// SPACING --------------------------------------------------------------------
+.h100 {
+    height: 100vh;
+}
+
+.w100 {
+    widows: 100vw;
+}
+
+// LOGO SIZING ----------------------------------------------------------------
+.logoLg {
+    height: 12rem;
+}
+
+.logoSm {
+    height: 5rem;
+}
+
+// SEPARATORS -----------------------------------------------------------------
+hr.shortSeparator {
+    border: .5rem solid $lightAqua;
+    border-radius: .3rem;
+    width: 5rem;
+}
+//BUTTONS----------------------------------------------------------------------
+$btnRadius: 10rem;
+
+//primary*****************************
+.btn-primary {
+    background: $orange;
+    border-color: $orange;
+    border-radius: $btnRadius;
+    @include fontBlack;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+}
+
+.btn-primary:hover {
+    background: $orange;
+    color: $white;
+    border-color: $orange;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+}
+
+.btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
+    color: $white;
+    background-color: $orange;
+    border-color: rgba(217,156,80,0.25);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+.btn-lg {
+    padding: .5rem 4rem;
+}
+
+@media only screen and (max-width: 1314px) {
+    .btn-lg {
+        padding: .5rem 1rem;
+    }
+}
+
+//secondary *****************************
+.btn-secondary {
+    background: $orange;
+    border-color: $orange;
+    border-radius: $btnRadius;
+    color: $white;
+}
+
+.btn-secondary:hover {
+    background: $orange;
+    color: $white;
+    border-color: $orange;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+}
+
+.btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active {
+    color: $white;
+    background-color: $orange;
+    border-color: rgba(217,156,80,0.25);
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+.btn-secondary.focus, .btn-secondary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+//outline *****************************
+.btn-outline-secondary {
+    border-color: $orange;
+    color: $orange;
+    border-radius: $btnRadius;
+    text-transform: uppercase;
+    @include fontReg;
+}
+
+.btn-outline-secondary:hover {
+    color: $orange;
+    background-color: $white;
+    border-color: $orange;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+    border-color: $orange;
+}
+
+.btn-outline-secondary:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+    color: $orange;
+    background-color: $white;
+    border-color: rgba(217,156,80,0.25);
+    border: 1px solid $orange;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+.btn-outline-secondary.focus, .btn-outline-secondary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+}
+
+//LOGIN PAGE ---------------------------------------------------------------------------
+#loginPage body {
+    background-image: url('../imgs/bg-login.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-color: $lightAqua;
+}
+
+#loginLogo {
+    height: 10rem;
+}
+
+#loginForm{
+    background: $white;
+    border-radius: .70rem;
+}
+
+#loginText {
+    color: $lightAqua;
+}
+
+#loginText h1 {
+    @include fontBlack;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+#loginText p {
+    @include fontReg;
+    text-transform: capitalize;
+}
+
+//FORMS------------------------------------------
+#formCol {
+    height: 100vh;
+}
+
+.form-control {
+    border-radius: .50rem;
+    color: $darkAqua;
+    @include fontReg;
+    background-color: $lightGray;
+}
+
+.form-control:focus {
+    color: $darkAqua;
+    @include fontBold;
+    background-color: $lightGray;
+    box-shadow: 0 0 0 .1rem rgba(107,196,209,1);
+}
+
+.fieldset a {
+    transition: .6s ease;
+}
+
+.fieldset a:hover {
+    text-decoration: none;
+    color: $orange;
+    transition: .6s ease;
+}
+
+.fieldset p {
+    color: $darkAqua;
+    @include fontReg;
+}
+
+.fieldset p a {
+    color: $darkAqua;
+    @include fontBold;
+    text-transform: uppercase; 
+}
+
+.formHeader {
+    color: $darkAqua;
+}
+
+.formHeader .h2 {
+    @include fontBlack;
+    text-transform: uppercase;
+}
+
+.formHeader p {
+    @include fontBold;
+    text-transform: uppercase;
+}
+
+// MODAL BOX ****************************
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    @include fontBold;
+    color: $darkAqua;
+    text-transform: uppercase;
+}
+
+.modal-content {
+    background-color: $white;
+}
+
+.modal-footer {
+    border-top: none;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+//DASHBOARD PAGE --------------------------------------------------------------
+
+//USER ACCOUNT INFO***********************
+.accountCol {
+    background-color: $darkAqua;
+    height: 100vh;
+}
+
+.accountCol .h2 {
+    color: $lightAqua;
+    @include fontReg;
+}
+
+.accountCol .h3 {
+    color: $lightAqua;
+    @include fontBold;
+}
+
+//SUGGESTIONS ***********************
+.suggestCol {
+    background-color: $lightGray;
+    height: 100vh;
+}
+
+//USER STATS INFO***********************
+.statsCol {
+    background-color: $white;
+    height: 100vh;
+}
+

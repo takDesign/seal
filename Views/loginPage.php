@@ -22,93 +22,110 @@
     <body id="loginPage">
         <main role="main" class="container-fluid">
             <section class="row">
-                <div class="col-md-7"></div>
-                <div id="loginForm" class="col-md-5 text-center mx-auto px-5 py-5 shadow-lg formWrapper">
-                    <form method="post" action="process-login.php" class="form-signin needs-validation" novalidate>
+                <div class="col-md-6 h100">
+                    <div class="col-md-4 mx-auto d-flex flex-column justify-content-center align-items-center h100">
 
-                        <div class="fieldset">
-                            <label for="validationCustom01" class="sr-only">Username</label>
-                            <input type="email" name="strEmail" id="inputEmail" class="form-control needs-validation" placeholder="Username" required autofocus>
-                            <div class="invalid-feedback">Uh oh, can you check your username?</div>
-                        </div>
+                        <img src="imgs/logo2.png" alt="seal logo" class="fluid logoLg">
 
-                        <div class="fieldset mt-2">
-                            <label for="validationCustom02" class="sr-only">Password</label>
-                            <input type="password" name="strPassword" id="inputPassword" class="form-control needs-validation" placeholder="Password" required>
-                            <div class="invalid-feedback">Uh oh, can you try your password again?</div>
-                        </div>
+                        <hr class="shortSeparator">
 
-                        <div class="fieldset mt-4 mb-4">
-                            <button class="btn btn-primary btn-block btn-lg" type="submit" name="strSubmit">Sign in</button>
-                        </div>
+                        <div id="loginText" class="text-center mt-2">
+                            <h1 class="mt-1">Seal</h1>
+                            <p class="mt-4">The suggestion box app</p>
+                        </div><!-- //copy-->
+                    </div><!-- //col4 -->
+                </div><!-- //col6 -->
 
-                        <div class="fieldset mt-3 mb-3">
-                            <small class="finePrint">Not a member? <a href="#" type="button" data-toggle="modal" data-target="#registerModal" class="highlight">Create an account</a></small>
-                        </div>
-                    </form>
-                </div><!--//form wrapper-->
-
-                <!-- Modal -->
-                <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header mx-auto">
-                                <h5 class="modal-title" id="registerModalLabel">Create an account to use Seal!</h5>
-
+                <div class="col-12 col-md-4 d-flex align-items-center h100">
+                    <div id="loginForm" class="d-flex mx-auto px-md-5 py-md-5 shadow-lg formWrapper">
+                        <form method="post" action="process-login.php" class="form-signin px-3 py-3 needs-validation" novalidate>
+                            <div class="formHeader">
+                                <p class="h2">Sign in</p>
+                                <p>To see the latest suggestions</p>
                             </div>
 
-                            <div class="modal-body">
-                                <div id="registerForm" class="text-center mx-auto px-5 py-5 formWrapper">
-                                    <form method="post" action="save-registration.php" class="form-signin needs-validation" novalidate>
-                                        <img id="loginLogo" class="mx-auto my-5" src="imgs/logo-s.png" alt="Suggest logo icon">
-                                        
-                                        <div class="fieldset">
-                                            <label for="validationCustom01" class="sr-only">First Name</label>
-                                            <input type="text" name="strFirstName" id="inputFirstName" class="form-control needs-validation" placeholder="First Name" required autofocus>
-                                            <div class="invalid-feedback">Sorry, we need your first name!</div>
-                                        </div>
+                            <div class="fieldset">
+                                <label for="validationCustom01" class="sr-only">Username</label>
+                                <input type="text" name="strEmail" id="inputEmail" class="form-control needs-validation" placeholder="Username" required autofocus>
+                                <div class="invalid-feedback">Uh oh, can you check your username?</div>
+                            </div>
 
-                                        <div class="fieldset mt-2">
-                                            <label for="validationCustom01" class="sr-only">Last Name</label>
-                                            <input type="text" name="strLastName" id="inputLastName" class="form-control needs-validation" placeholder="Last Name" required >
-                                            <div class="invalid-feedback">Sorry, we need your last name!</div>
-                                        </div>
+                            <div class="fieldset mt-2">
+                                <label for="validationCustom02" class="sr-only">Password</label>
+                                <input type="password" name="strPassword" id="inputPassword" class="form-control needs-validation" placeholder="Password" required>
+                                <div class="invalid-feedback">Uh oh, can you try your password again?</div>
+                            </div>
 
-                                        <div class="fieldset mt-2">
-                                            <label for="validationCustom01" class="sr-only">Email Address</label>
-                                            <input type="email" name="strEmail" id="inputEmail" class="form-control needs-validation" placeholder="Email" required >
-                                            <div class="invalid-feedback">Sorry, we need you email!</div>
-                                        </div>
+                            <div class="fieldset mt-4 mb-4">
+                                <button class="btn btn-primary btn-lg" type="submit" name="strSubmit">Sign in</button>
+                            </div>
 
-                                        <div class="fieldset mt-2">
-                                            <label for="validationCustom01" class="sr-only">Username</label>
-                                            <input type="text" name="strUserName" id="inputUsername" class="form-control needs-validation" placeholder="Username" required >
-                                            <div class="invalid-feedback">Sorry, we need a username!</div>
-                                        </div>
+                            <div class="fieldset mt-3 mb-3">
+                                <p class="finePrint">Not a member? <a href="#" type="button" data-toggle="modal" data-target="#registerModal" class="highlight">Create an account</a></p>
+                            </div>
+                        </form>
+                    </div><!--//form wrapper-->
 
-                                        <div class="fieldset mt-2">
-                                            <label for="validationCustom02" class="sr-only">Password</label>
-                                            <input type="password" name="strPassword" id="inputPassword" class="form-control needs-validation" placeholder="Password" required>
-                                            <div class="invalid-feedback">Sorry, we need a password!</div>
-                                        </div>
-                            </div><!--//modal body-->
-                            
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-secondary">Register</button>
-                            </div><!--//modal footer-->
+                    <!-- Modal -->
+                    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header mx-auto mt-4">
+                                    <h5 class="modal-title" id="registerModalLabel">Create an account to use Seal!</h5>
+                                </div>
 
-                                    </form><!--//form (slightly out of sequential order due to modal)-->
-                                </div><!--//formwrapper (slightly out of sequential order due to modal)-->
-                        </div><!--//modal content-->
-                    </div><!--//modal dialogue-->
-                </div><!--//modal-->
+                                <div class="modal-body">
+                                    <div id="registerForm" class="text-center mx-auto px-md-5 py-md-2 formWrapper">
+                                        <form method="post" action="save-registration.php" class="form-signin needs-validation" novalidate>
+                                            <img id="loginLogo" class="mx-auto mb-3" src="imgs/logo.png" alt="Suggest logo icon">
+                                            
+                                            <div class="fieldset">
+                                                <label for="validationCustom01" class="sr-only">First Name</label>
+                                                <input type="text" name="strFirstName" id="inputFirstName" class="form-control needs-validation" placeholder="First Name" required autofocus>
+                                                <div class="invalid-feedback">Sorry, we need your first name!</div>
+                                            </div>
+
+                                            <div class="fieldset mt-2">
+                                                <label for="validationCustom01" class="sr-only">Last Name</label>
+                                                <input type="text" name="strLastName" id="inputLastName" class="form-control needs-validation" placeholder="Last Name" required >
+                                                <div class="invalid-feedback">Sorry, we need your last name!</div>
+                                            </div>
+
+                                            <div class="fieldset mt-2">
+                                                <label for="validationCustom01" class="sr-only">Email Address</label>
+                                                <input type="email" name="strEmail" id="inputEmail" class="form-control needs-validation" placeholder="Email" required >
+                                                <div class="invalid-feedback">Sorry, we need you email!</div>
+                                            </div>
+
+                                            <div class="fieldset mt-2">
+                                                <label for="validationCustom01" class="sr-only">Username</label>
+                                                <input type="text" name="strUserName" id="inputUsername" class="form-control needs-validation" placeholder="Username" required >
+                                                <div class="invalid-feedback">Sorry, we need a username!</div>
+                                            </div>
+
+                                            <div class="fieldset mt-2">
+                                                <label for="validationCustom02" class="sr-only">Password</label>
+                                                <input type="password" name="strPassword" id="inputPassword" class="form-control needs-validation" placeholder="Password" required>
+                                                <div class="invalid-feedback">Sorry, we need a password!</div>
+                                            </div>
+                                </div><!--//modal body-->
+                                
+                                <div class="modal-footer mx-5 mt-3 mb-4">
+                                    <button type="button" class="btn btn-outline-secondary float-left" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-primary float-left">Register</button>
+                                </div><!--//modal footer-->
+
+                                        </form><!--//form (slightly out of sequential order due to modal)-->
+                                    </div><!--//formwrapper (slightly out of sequential order due to modal)-->
+                            </div><!--//modal content-->
+                        </div><!--//modal dialogue-->
+                    </div><!--//modal-->
+                </div><!--//BS col-->
             </section><!--  //BS row -->
         </main>
 
         <!-- JS FORM VALIDATION -->
         <script type="text/javascript" src="js/form-validation-plugin.js"></script>
-
         <!-- BOOTSTRAP JQUERY -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- BOOTSTRAP POPPER JS -->
