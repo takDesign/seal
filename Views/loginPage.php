@@ -22,12 +22,17 @@
     <body id="loginPage">
         <main role="main" class="h-100">
             <div id="loginForm" class="text-center mx-auto px-5 py-5 shadow-lg formWrapper">
-                <form method="post" action="process-login.php" class="form-signin needs-validation" novalidate>
+                <form method="post" action="index.php" class="form-signin needs-validation" novalidate>
+
+                <input type="hidden" name="controller" value="outside">
+                <input type="hidden" name="route" value="processlogin">
+                <!-- selecting controller and route upon form submission -->
+
                     <img id="loginLogo" class="mx-auto my-5" src="imgs/logo-s.png" alt="Suggest logo icon">
 
                     <div class="fieldset">
                         <label for="validationCustom01" class="sr-only">Username</label>
-                        <input type="email" name="strEmail" id="inputEmail" class="form-control needs-validation" placeholder="Username" required autofocus>
+                        <input type="email" name="strUserName" id="inputEmail" class="form-control needs-validation" placeholder="Username" required autofocus>
                         <div class="invalid-feedback">Uh oh, can you check your username?</div>
                     </div>
 
@@ -58,7 +63,12 @@
 
                         <div class="modal-body">
                             <div id="registerForm" class="text-center mx-auto px-5 py-5 formWrapper">
-                                <form method="post" action="save-registration.php" class="form-signin needs-validation" novalidate>
+                                <form method="post" action="index.php" class="form-signin needs-validation" novalidate>
+
+                                    <input type="hidden" name="controller" value="outside">
+                                    <input type="hidden" name="route" value="createnewuser">
+                                    <!-- selecting controller and route upon form submission -->
+
                                     <img id="loginLogo" class="mx-auto my-5" src="imgs/logo-s.png" alt="Suggest logo icon">
                                     
                                     <div class="fieldset">

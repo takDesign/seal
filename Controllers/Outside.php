@@ -1,5 +1,4 @@
 <?php
-
 Class Outside extends Controller
 {
 	// index.php?controller=outside&route=default
@@ -7,19 +6,17 @@ Class Outside extends Controller
 	{	
 		echo "hello default";
 	}
-
+	
 	public function showLogin()
 	{
-		$body = $this->loadView("Views/loginForm.php");
-
+		$body = $this->loadView("Views/loginPage.php");
 		include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
 	}
 
 public function processLogin()
 	{
 		//I also have to send things here...
-		$bLogInStatus = User::login($_POST["username"],$_POST["password"]);
-
+		$bLogInStatus = User::login($_POST["strUserName"],$_POST["strPassword"]);
 		if($bLogInStatus)
 		{
 			// look for a controller called suggestions and the method inside their called "new"
@@ -31,15 +28,22 @@ public function processLogin()
 		}
 	}
 
+
+	public function createNewUser(){
+
+    User::saveRegister($_POST["strFirstName"],$_POST["strLastName"],$_POST["strEmail"],$_POST["strUserName"],$_POST["strPassword"]);
+		
+	}
+
+
+
 	public function preTrip()
 	{
 		// this function will run before doing any routes inside this controller
 	}
-
 	public function postTrip()
 	{
 		// this function will run after running a routes inside this controller
 	}
 }
-
 ?>
