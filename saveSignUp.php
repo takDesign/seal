@@ -8,13 +8,12 @@ $username = $_POST['username'];
 $arrClean["username"] = mysqli_real_escape_string($con, $username);
 
 $hashedPassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
-$statement = $con->prepare("INSERT INTO users (strUserName, strPassword) VALUES (?, ?)");
-// echo $statement;
+// print_r($hashedPassword);
 // die;
+$statement = $con->prepare("INSERT INTO users (strUserName, strPassword) VALUES (?, ?)");
+
 $statement->bind_param("ss", $arrClean["username"], $hashedPassword); //ssis is the pattern - so ss is the string, string
 $statement->execute();
 
 
 header("location: index.php");
-?>

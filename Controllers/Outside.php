@@ -1,10 +1,11 @@
 <?php
 
-Class Outside extends Controller
+class Outside extends Controller
 {
 	// index.php?controller=outside&route=default
-	public function default()
-	{	
+	public function
+	default()
+	{
 		echo "hello default";
 	}
 
@@ -15,18 +16,17 @@ Class Outside extends Controller
 		include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
 	}
 
-public function processLogin()
+	public function processLogin()
 	{
 		//I also have to send things here...
-		$bLogInStatus = User::login($_POST["username"],$_POST["password"]);
+		$bLogInStatus = User::login($_POST["username"], $_POST["password"]);
 
-		if($bLogInStatus)
-		{
+		if ($bLogInStatus) {
 			// look for a controller called suggestions and the method inside their called "new"
-			echo "You made it in!";
+			header("location: index.php?controller=inside&route=showDashboard");
 		} else {
 			echo "jk we couldn't quite get ya there...";
-			
+
 			// header("location: index.php?controller=outside&route=login&error=1");
 		}
 	}
@@ -41,5 +41,3 @@ public function processLogin()
 		// this function will run after running a routes inside this controller
 	}
 }
-
-?>
