@@ -7,7 +7,7 @@
 
 </head>
 <body>
-<!--html framework with body tag-->
-	<?=$body?>
+<!--html framework with body tag -->
+	<?=$body?>hi
 </body>
 </html>

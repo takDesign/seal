@@ -19,7 +19,7 @@ $oController = new $routeInfo["controller"]();
 if (method_exists($oController, $routeInfo["route"])) {
 
 	$oController->preTrip(); //runs teh tpretrip in the controller
-	$oController->{$routeInfo["route"]}();
+	$oController->{$routeInfo["route"]}(); //this is where we are executing from, can be get variable or post variable
 	$oController->postTrip(); //after it gets the route it runs the post trip
 } else {
 	$oController->error($routeInfo["controller"], $routeInfo["route"]);

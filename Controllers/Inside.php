@@ -19,15 +19,46 @@ class Inside extends Controller
 		}
 	}
 
+	static public function getAll()
+	{
+		// go to the database and get a bunch of suggestions
+		
+	}
+
 
 	public function showDashboard()
 	{
-		$body = $this->loadView("Views/newSuggest.php");
+		$con = Db::con();
+		$results = Db::query($con, "SELECT * FROM suggestions");
 
-		include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
+		while($suggestion = mysqli_fetch_assoc($results))
+		{
+			$arrSuggestions[] = new Suggestion(
+										$suggestion["id"],
+										$suggestion["strTitle"], 
+										$suggestion["strContent"], 
+										$suggestion["dPosted"],
+										$suggestion["nUsersID"]
+			);
+		}
+		$arrSuggestions;
 
-		// echo "SESSION ID: " . $_SESSION["userid"];
-		// echo '<br><a href="index.php?controller=inside&route=showDashboard">Post a suggestion</a>';
+		//suggestionList overwrites data, arrSuggestions is passing from the array. We get the data in teh array. In the array we get the list of data and we send to loadview.
+		// print_r($arrSuggestions);
+		// die;
+		// $body = $this->loadView("Views/newSuggest.php");
+		$body = include("Views/newSuggest.php");
+		
+		// $body = $this->loadView("Views/mainTemplate", $body);
+		include("Views/mainTemplate.php");
+		//include("Views/suggestionList.php"); // show us the suggestion list
+		// include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
+
+		
+
+		// print_r($arrSuggestions);
+		// die;
+	
 	}
 
 	public function preTrip()

@@ -2,20 +2,21 @@
 
 class Suggestion
 {
-	// var $id;
-	// var $userId;
-	// var $title;
-	// var $suggestion;
-	// var $datePosted;
 
-	// public function __construct($id, $userId, $title, $suggestion, $datePosted)
-	// {
-	// 	$this->id = $id;
-	// 	$this->userId = $userId;
-	// 	$this->title = $title;
-	// 	$this->suggestion = $suggestion;
-	// 	$this->datePosted = $datePosted;
-	// }
+	var $id;
+	var $strTitle;
+	var $strContent;
+	var $dPosted;
+	var $nUsersID;
+
+	public function __construct($id, $userId, $title, $suggestion, $datePosted)
+	{
+		$this->id = $id;
+		$this->nUsersID = $userId;
+		$this->strTitle = $title;
+		$this->strContent = $suggestion;
+		$this->dPosted = $datePosted;
+	}
 
 	public static function suggest($title, $suggestion, $userId)
 	{
@@ -51,3 +52,4 @@ class Suggestion
 
 	// }
 }
+

@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-
-<body>
     <h1>Hey! Create a New Suggestion</h1>
     <?php
     if (isset($_GET['success'])) {
@@ -31,8 +20,13 @@
                 <input type="submit" value="Submit" class="btn btnPositive">
             </div>
         </form>
-    </div>
-    </div>
-</body>
+        
+        <div class="listview">
+<?php
 
-</html>
+foreach($arrSuggestions as $suggestions)
+{
+    echo "<div class='suggestions'>".$suggestions->suggestion." <span class='date'>".$suggestions->dPosted."<a href='index.php?controller=inside&route=likeSuggestion&id=".$suggestions->id."'>LIKE</a> <a href='index.php?controller=inside&route=deleteSuggestion&id=".$suggestions->id."'>DELETE</a></div>";
+}
+?>
+</div>
