@@ -1,13 +1,50 @@
+.listHeader {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+}
+
+.h100 {
+  height: 100vh;
+}
+
+.w100 {
+  widows: 100vw;
+}
+
+.removeGutter {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.logoLg {
+  height: 12rem;
+}
+
+.logoSm {
+  height: 5rem;
+}
+
+hr.shortSeparator {
+  border: 0.5rem solid #d1f9fa;
+  border-radius: 0.3rem;
+  width: 5rem;
+}
+
 .btn-primary {
   background: #d99c50;
   border-color: #d99c50;
   border-radius: 10rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
 }
 
 .btn-primary:hover {
-  background: whitesmoke;
-  color: #d99c50;
+  background: #d99c50;
+  color: whitesmoke;
   border-color: #d99c50;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
@@ -24,6 +61,15 @@
   box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
 }
 
+.btn-lg {
+  padding: 0.5rem 4rem;
+}
+
+@media only screen and (max-width: 1314px) {
+  .btn-lg {
+    padding: 0.5rem 1rem;
+  }
+}
 .btn-secondary {
   background: #d99c50;
   border-color: #d99c50;
@@ -35,6 +81,7 @@
   background: #d99c50;
   color: whitesmoke;
   border-color: #d99c50;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active {
@@ -55,13 +102,16 @@
   border-color: #d99c50;
   color: #d99c50;
   border-radius: 10rem;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
 }
 
 .btn-outline-secondary:hover {
-  background: #d99c50;
-  color: whitesmoke;
-  background-color: #d99c50;
+  color: #d99c50;
+  background-color: whitesmoke;
   border-color: #d99c50;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active {
@@ -83,40 +133,208 @@
   box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
 }
 
-#loginPage {
-  background-image: url(./img/bg-login.php);
+body#loginPage {
+  background-image: url("../imgs/bg-login.jpg");
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-color: #d1f9fa;
+}
+
+#loginLogo {
+  height: 10rem;
+}
+
+#loginForm {
+  background: whitesmoke;
+  border-radius: 0.7rem;
+}
+
+#loginText {
+  color: #d1f9fa;
+}
+
+#loginText h1 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+}
+
+#loginText p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+#formCol {
+  height: 100vh;
 }
 
 .form-control {
-  border-radius: .50rem;
+  border-radius: 0.5rem;
+  color: #245e62;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  background-color: #E8E8E8;
 }
 
 .form-control:focus {
-  color: #6bc4d1;
+  color: #245e62;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  background-color: #E8E8E8;
   box-shadow: 0 0 0 0.1rem #6bc4d1;
 }
 
-input {
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  color: #245e62;
-}
-
-#inputPassword {
-  color: #d99c50;
-}
-
-label {
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-}
-
 .fieldset a {
-  transition: .6s ease;
+  transition: 0.6s ease;
 }
 
 .fieldset a:hover {
   text-decoration: none;
   color: #d99c50;
-  transition: .6s ease;
+  transition: 0.6s ease;
 }
+
+.fieldset p {
+  color: #245e62;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+.fieldset p a {
+  color: #245e62;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.formHeader {
+  color: #245e62;
+}
+
+.formHeader .h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.formHeader p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-title {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  color: #245e62;
+  text-transform: uppercase;
+}
+
+.modal-content {
+  background-color: whitesmoke;
+}
+
+.modal-footer {
+  border-top: none;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.accountCol {
+  border-radius: 0px 50px 0px 0px;
+  background-color: whitesmoke;
+  /* For browsers that do not support gradients */
+  background-image: linear-gradient(#245e62, #6bc4d1);
+  /* Standard syntax (must be last) */
+  background-size: cover;
+}
+
+.accountCol .h2 {
+  color: #d1f9fa;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+.accountCol .h3 {
+  color: #d1f9fa;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+img.dashBubbles {
+  width: 50%;
+  overflow: hidden;
+}
+
+.suggestCol {
+  background-color: #E8E8E8;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.suggestCol form {
+  background-color: #fff;
+}
+
+.suggestCol .h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  color: #245e62;
+}
+
+.suggestCol input {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.listHeader .h3 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+}
+
+.listHeader p {
+  color: #245e62;
+  text-transform: uppercase;
+}
+
+.listHeader a {
+  color: #d99c50;
+  text-transform: lowercase;
+}
+
+.suggestCard {
+  font-family: font;
+  color: #245e62;
+  border-radius: 1rem;
+}
+
+.suggestCard h6, .suggestCard span {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.suggestCard p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.suggestCard small {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+
+.statsCol {
+  background-color: whitesmoke;
+}
+
+/*# sourceMappingURL=style.css.map */

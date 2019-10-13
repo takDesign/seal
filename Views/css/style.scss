@@ -13,6 +13,8 @@ $rgbDA: 36,94,98;
 
 $white: whitesmoke;
 
+$lightGray: #E8E8E8;
+
 $gradient: linear-gradient(to bottom, $darkAqua 0%, $lightBlue 100%);
 
 // FONTS ----------------------------------------------------------------------
@@ -44,6 +46,39 @@ $font: 'Raleway', sans-serif;
     font-style: italic;
 }
 
+.listHeader {
+    @include fontBlack;
+}
+
+// SPACING --------------------------------------------------------------------
+.h100 {
+    height: 100vh;
+}
+
+.w100 {
+    widows: 100vw;
+}
+
+.removeGutter {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+// LOGO SIZING ----------------------------------------------------------------
+.logoLg {
+    height: 12rem;
+}
+
+.logoSm {
+    height: 5rem;
+}
+
+// SEPARATORS -----------------------------------------------------------------
+hr.shortSeparator {
+    border: .5rem solid $lightAqua;
+    border-radius: .3rem;
+    width: 5rem;
+}
 //BUTTONS----------------------------------------------------------------------
 $btnRadius: 10rem;
 
@@ -52,12 +87,16 @@ $btnRadius: 10rem;
     background: $orange;
     border-color: $orange;
     border-radius: $btnRadius;
+    @include fontBlack;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
 }
 
 .btn-primary:hover {
-    background: $white;
-    color: $orange;
+    background: $orange;
+    color: $white;
     border-color: $orange;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
 }
 
 .btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
@@ -74,6 +113,16 @@ $btnRadius: 10rem;
     box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
 }
 
+.btn-lg {
+    padding: .5rem 4rem;
+}
+
+@media only screen and (max-width: 1314px) {
+    .btn-lg {
+        padding: .5rem 1rem;
+    }
+}
+
 //secondary *****************************
 .btn-secondary {
     background: $orange;
@@ -86,6 +135,7 @@ $btnRadius: 10rem;
     background: $orange;
     color: $white;
     border-color: $orange;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
 }
 
 .btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active {
@@ -107,13 +157,15 @@ $btnRadius: 10rem;
     border-color: $orange;
     color: $orange;
     border-radius: $btnRadius;
+    text-transform: uppercase;
+    @include fontReg;
 }
 
 .btn-outline-secondary:hover {
-    background: $orange;
-    color: $white;
-    background-color: $orange;
+    color: $orange;
+    background-color: $white;
     border-color: $orange;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active {
@@ -136,31 +188,56 @@ $btnRadius: 10rem;
 }
 
 //LOGIN PAGE ---------------------------------------------------------------------------
-#loginPage {
-    background-image: url(./img/bg-login.php);
+body#loginPage {
+    background-image: url("../imgs/bg-login.jpg");
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-color: $lightAqua;
+}
+
+#loginLogo {
+    height: 10rem;
+}
+
+#loginForm{
+    background: $white;
+    border-radius: .70rem;
+}
+
+#loginText {
+    color: $lightAqua;
+}
+
+#loginText h1 {
+    @include fontBlack;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+}
+
+#loginText p {
+    @include fontReg;
+    text-transform: capitalize;
 }
 
 //FORMS------------------------------------------
+#formCol {
+    height: 100vh;
+}
+
 .form-control {
     border-radius: .50rem;
+    color: $darkAqua;
+    @include fontReg;
+    background-color: $lightGray;
 }
 
 .form-control:focus {
-    color: $lightBlue;
-    box-shadow: 0 0 0 .1rem rgba(107,196,209,1);
-}
-
-input {
-    @include fontReg;
     color: $darkAqua;
-}
-
-#inputPassword {
-    color: $orange;
-}
-
-label {
-    @include fontReg;
+    @include fontBold;
+    background-color: $lightGray;
+    box-shadow: 0 0 0 .1rem rgba(107,196,209,1);
 }
 
 .fieldset a {
@@ -173,10 +250,132 @@ label {
     transition: .6s ease;
 }
 
-// .fieldset button {
-//     margin-top: 6rem;
-// }
+.fieldset p {
+    color: $darkAqua;
+    @include fontReg;
+}
 
-// .modal-footer {
-//     border-top: 1px solid transparent;
-// }
+.fieldset p a {
+    color: $darkAqua;
+    @include fontBold;
+    text-transform: uppercase; 
+}
+
+.formHeader {
+    color: $darkAqua;
+}
+
+.formHeader .h2 {
+    @include fontBlack;
+    text-transform: uppercase;
+}
+
+.formHeader p {
+    @include fontBold;
+    text-transform: uppercase;
+}
+
+// MODAL BOX ****************************
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-title {
+    @include fontBold;
+    color: $darkAqua;
+    text-transform: uppercase;
+}
+
+.modal-content {
+    background-color: $white;
+}
+
+.modal-footer {
+    border-top: none;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+//DASHBOARD PAGE --------------------------------------------------------------
+
+//USER ACCOUNT INFO***********************
+.accountCol {
+    border-radius: 0px 50px 0px 0px;
+    background-color: $white; /* For browsers that do not support gradients */
+    background-image: linear-gradient($darkAqua, $lightBlue); /* Standard syntax (must be last) */
+    background-size: cover;
+}
+
+.accountCol .h2 {
+    color: $lightAqua;
+    @include fontReg;
+}
+
+.accountCol .h3 {
+    color: $lightAqua;
+    @include fontBold;
+}
+
+img.dashBubbles {
+    width: 50%;
+    overflow: hidden;
+}
+
+//SUGGESTIONS ***********************
+.suggestCol {
+    background-color: $lightGray;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.suggestCol form {
+    background-color: #fff;
+}
+
+.suggestCol .h2 {
+    @include fontBold;
+    color: $darkAqua;
+}
+
+.suggestCol input {
+    @include fontLightIt;
+}
+
+.listHeader .h3 {
+    @include fontBlack;
+
+}
+
+.listHeader p {
+    color: $darkAqua;
+    text-transform: uppercase;
+}
+
+.listHeader a {
+    color: $orange;
+    text-transform: lowercase;
+}
+
+.suggestCard {
+    font-family: font;
+    color: $darkAqua;
+    border-radius: 1rem;
+}
+
+.suggestCard h6, .suggestCard span {
+    @include fontBold;
+}
+
+.suggestCard p {
+    @include fontLightIt;
+}
+
+.suggestCard small {
+    @include fontReg;
+}
+
+//USER STATS INFO***********************
+.statsCol {
+    background-color: $white;
+}
+
