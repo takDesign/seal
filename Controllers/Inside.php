@@ -19,15 +19,14 @@ class Inside extends Controller
 		}
 	}
 
-
 	public function showDashboard()
 	{
-		$body = $this->loadView("Views/newSuggest.php");
+
+		$arrSuggestions = Suggestion::getAll();
+
+		$body = $this->loadView("Views/newSuggest.php", $arrSuggestions); // Passing data to loadView so suggestionList.php can read it
 
 		include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
-
-		// echo "SESSION ID: " . $_SESSION["userid"];
-		// echo '<br><a href="index.php?controller=inside&route=showDashboard">Post a suggestion</a>';
 	}
 
 	public function preTrip()
@@ -39,11 +38,4 @@ class Inside extends Controller
 	{
 		// this function will run after running a routes inside this controller
 	}
-
-	// public function showDashboard()
-	// {
-	// 	$body = $this->loadView("Views/loginForm.php");
-
-	// 	include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
-	// }
 }

@@ -2,25 +2,26 @@
 
 class Suggestion
 {
-	// var $id;
-	// var $userId;
-	// var $title;
-	// var $suggestion;
-	// var $datePosted;
 
-	// public function __construct($id, $userId, $title, $suggestion, $datePosted)
-	// {
-	// 	$this->id = $id;
-	// 	$this->userId = $userId;
-	// 	$this->title = $title;
-	// 	$this->suggestion = $suggestion;
-	// 	$this->datePosted = $datePosted;
-	// }
+	var $id;
+	var $strTitle;
+	var $strContent;
+	var $dPosted;
+	var $strUserName;
+
+	public function __construct($id, $title, $suggestion, $datePosted, $strUserName)
+	{
+		$this->id = $id;
+		$this->strTitle = $title;
+		$this->strContent = $suggestion;
+		$this->dPosted = $datePosted;
+		$this->strUserName = $strUserName;
+	}
 
 	public static function suggest($title, $suggestion, $userId)
 	{
 		date_default_timezone_set('America/Vancouver');
-		$datePosted =  date("Y/m/d");
+		$datePosted =  date("Y-m-d H:i:s"); // the MySQL DATETIME format
 		$con = Db::con();
 
 		$num = Db::query($con, "INSERT INTO suggestions (strTitle, strContent, dPosted, nUsersID) VALUES ('" . mysqli_real_escape_string($con, $title) . "', '" . mysqli_real_escape_string($con, $suggestion) . "', '" . $datePosted . "', '" . $userId . "') ");
@@ -29,10 +30,35 @@ class Suggestion
 		} else {
 			return false;
 		}
-
-		//Db::query($con, "INSERT INTO suggestions WHERE id='" . mysqli_real_escape_string($con, $id) . "'");
 	}
 
+	public static function getAll()
+	{
+		// go to the database and get a bunch of suggestions
+		$con = Db::con();
+		$results = Db::query(
+			$con,
+			"SELECT suggestions.id,
+			suggestions.strTitle,
+			suggestions.strContent,
+			suggestions.dPosted,
+			users.strUserName AS strUserName
+			FROM suggestions 
+			LEFT JOIN users ON users.id=suggestions.nUsersID
+			"
+		);
+
+		while ($suggestion = mysqli_fetch_assoc($results)) {
+			$arrSuggestions[] = new Suggestion(
+				$suggestion["id"],
+				$suggestion["strTitle"],
+				$suggestion["strContent"],
+				$suggestion["dPosted"],
+				$suggestion["strUserName"]
+			);
+		}
+		return $arrSuggestions;
+	}
 
 	// public static function get($id)
 	// {

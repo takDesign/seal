@@ -11,7 +11,7 @@ Class Suggestions extends Controller
 	{
 
 		$body = $this->loadView("Views/newSuggest.php");
-
+		// include("Views/suggestionList.php"); // show us the suggestion list
 		include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
 	}
 

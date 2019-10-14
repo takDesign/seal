@@ -13,7 +13,7 @@
 		<form method="post" action="index.php">
 			<!-- <form method="post" action="index.php"> -->
 			<input type="hidden" name="controller" value="outside">
-			<input type="hidden" name="route" value="processlogin">
+			<input type="hidden" name="route" value="processlogin"> <!--processLogin is the method name-->
 
 			<input type="text" name="username" value="" placeholder="enter username"><Br />
 			<input type="text" name="password" value="" placeholder="enter password"><Br />
