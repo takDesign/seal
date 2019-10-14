@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 12, 2019 at 11:43 PM
+-- Generation Time: Oct 14, 2019 at 06:36 AM
 -- Server version: 5.7.26
 -- PHP Version: 7.3.8
 
@@ -55,7 +55,10 @@ INSERT INTO `suggestions` (`id`, `strTitle`, `strContent`, `dPosted`, `nUsersID`
 (21, 'hello', 'hey heres a suggstion', '2019-09-24 00:00:00', 1),
 (35, 'bbbb', 'bbbb', '2019-10-12 22:58:00', 1),
 (36, 'dd', 'ddd', '2019-10-12 23:05:59', 1),
-(37, 'rrr', 'rrr', '2019-10-12 23:14:52', 1);
+(37, 'rrr', 'rrr', '2019-10-12 23:14:52', 1),
+(38, '', 'aaaa', '2019-10-14 03:01:15', 1),
+(39, NULL, 'bbbbbb', '2019-10-14 03:14:32', 28),
+(40, NULL, 'pacman', '2019-10-14 06:23:12', 39);
 
 -- --------------------------------------------------------
 
@@ -91,7 +94,10 @@ INSERT INTO `users` (`id`, `strFirstName`, `strLastName`, `strEmail`, `strUserNa
 (25, 'Tak', 'Ito', 'tak@test', 'Username Test', 'password', '', 8),
 (26, 'test', 'test', 'test', 'test', 'test', '', 6),
 (27, NULL, NULL, NULL, 'tak', '$2y$10$MHMVwW6D/j9s2bO5oFlaL.bZ3MUzsOcqnGwTfHcAsiMJnmgufrBNK', NULL, NULL),
-(28, NULL, NULL, NULL, 'a', '$2y$10$xGUADr2NykC8RgLAQHv9UusEymHajx0dO.bcu5dR13H/zMJTdBk.m', NULL, NULL);
+(28, NULL, NULL, NULL, 'b', '$2y$10$xGUADr2NykC8RgLAQHv9UusEymHajx0dO.bcu5dR13H/zMJTdBk.m', NULL, NULL),
+(37, 'bvbvbvb', 'bvbvbv', 'tak@vanarts.com', 'bvbvbvb', '$2y$10$vYVPjy85c2/YAWrjjtIoOesnlB.1jsqC9G9ZBmb9eRue.wbAhEKnO', NULL, NULL),
+(38, 'ewewewe', 'ewewe', 'tak@vanarts.com', 'ewewew', '$2y$10$fL9tF1DB717Pjw3kzaQU6euznq/J.jTDT9QCtj6U/kkn8TbKloZJC', NULL, NULL),
+(39, 'uyuyuyu', 'uyuyuyuy', 'tak@vanarts.com', 'pacman', '$2y$10$4qD/saeQwvH2Bf47vuNhpOOwkTcRMrco6uGq4vNPQpI2fwlRofdwG', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -202,13 +208,13 @@ ALTER TABLE `votes`
 -- AUTO_INCREMENT for table `suggestions`
 --
 ALTER TABLE `suggestions`
-  MODIFY `id` mediumint(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` mediumint(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` mediumint(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` mediumint(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `votes`
