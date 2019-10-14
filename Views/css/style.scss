@@ -1,15 +1,23 @@
 // COLORS ---------------------------------------------------------------------
-$orange: #d99c50; 	
-$rgbO: 217,156,80;
+$orange: #d99c50;
+$rgbO: 217,
+156,
+80;
 
-$lightAqua:	#d1f9fa;
-$rgbLA: 209,249,250;
+$lightAqua: #d1f9fa;
+$rgbLA: 209,
+249,
+250;
 
-$lightBlue:	#6bc4d1;
-$rgbLB: 107,196,209;
+$lightBlue: #6bc4d1;
+$rgbLB: 107,
+196,
+209;
 
-$darkAqua:	#245e62;
-$rgbDA: 36,94,98;
+$darkAqua: #245e62;
+$rgbDA: 36,
+94,
+98;
 
 $white: whitesmoke;
 
@@ -18,7 +26,8 @@ $lightGray: #E8E8E8;
 $gradient: linear-gradient(to bottom, $darkAqua 0%, $lightBlue 100%);
 
 // FONTS ----------------------------------------------------------------------
-$font: 'Raleway', sans-serif;
+$font: 'Raleway',
+sans-serif;
 
 @mixin fontBlack {
     font-family: $font;
@@ -56,7 +65,7 @@ $font: 'Raleway', sans-serif;
 }
 
 .w100 {
-    widows: 100vw;
+    width: 100vw;
 }
 
 .removeGutter {
@@ -79,6 +88,7 @@ hr.shortSeparator {
     border-radius: .3rem;
     width: 5rem;
 }
+
 //BUTTONS----------------------------------------------------------------------
 $btnRadius: 10rem;
 
@@ -96,21 +106,23 @@ $btnRadius: 10rem;
     background: $orange;
     color: $white;
     border-color: $orange;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)
 }
 
-.btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active {
     color: $white;
     background-color: $orange;
-    border-color: rgba(217,156,80,0.25);
+    border-color: rgba(217, 156, 80, 0.25);
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+    box-shadow: 0 0 0 .2rem rgba(217, 156, 80, 0.25);
 }
 
-.btn-primary.focus, .btn-primary:focus {
-    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+.btn-primary.focus,
+.btn-primary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217, 156, 80, 0.25);
 }
 
 .btn-lg {
@@ -135,21 +147,23 @@ $btnRadius: 10rem;
     background: $orange;
     color: $white;
     border-color: $orange;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)
 }
 
-.btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active {
+.btn-secondary:focus,
+.btn-secondary:not(:disabled):not(.disabled):active {
     color: $white;
     background-color: $orange;
-    border-color: rgba(217,156,80,0.25);
+    border-color: rgba(217, 156, 80, 0.25);
 }
 
 .btn-secondary:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+    box-shadow: 0 0 0 .2rem rgba(217, 156, 80, 0.25);
 }
 
-.btn-secondary.focus, .btn-secondary:focus {
-    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+.btn-secondary.focus,
+.btn-secondary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217, 156, 80, 0.25);
 }
 
 //outline *****************************
@@ -165,26 +179,29 @@ $btnRadius: 10rem;
     color: $orange;
     background-color: $white;
     border-color: $orange;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15)
 }
 
-.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
     border-color: $orange;
 }
 
-.btn-outline-secondary:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+.btn-outline-secondary:focus,
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
     color: $orange;
     background-color: $white;
-    border-color: rgba(217,156,80,0.25);
+    border-color: rgba(217, 156, 80, 0.25);
     border: 1px solid $orange;
 }
 
 .btn-outline-secondary:not(:disabled):not(.disabled):active:focus {
-    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+    box-shadow: 0 0 0 .2rem rgba(217, 156, 80, 0.25);
 }
 
-.btn-outline-secondary.focus, .btn-outline-secondary:focus {
-    box-shadow: 0 0 0 .2rem rgba(217,156,80,0.25);
+.btn-outline-secondary.focus,
+.btn-outline-secondary:focus {
+    box-shadow: 0 0 0 .2rem rgba(217, 156, 80, 0.25);
 }
 
 //LOGIN PAGE ---------------------------------------------------------------------------
@@ -201,7 +218,7 @@ body#loginPage {
     height: 10rem;
 }
 
-#loginForm{
+#loginForm {
     background: $white;
     border-radius: .70rem;
 }
@@ -237,7 +254,7 @@ body#loginPage {
     color: $darkAqua;
     @include fontBold;
     background-color: $lightGray;
-    box-shadow: 0 0 0 .1rem rgba(107,196,209,1);
+    box-shadow: 0 0 0 .1rem rgba(107, 196, 209, 1);
 }
 
 .fieldset a {
@@ -258,7 +275,7 @@ body#loginPage {
 .fieldset p a {
     color: $darkAqua;
     @include fontBold;
-    text-transform: uppercase; 
+    text-transform: uppercase;
 }
 
 .formHeader {
@@ -301,8 +318,10 @@ body#loginPage {
 //USER ACCOUNT INFO***********************
 .accountCol {
     border-radius: 0px 50px 0px 0px;
-    background-color: $white; /* For browsers that do not support gradients */
-    background-image: linear-gradient($darkAqua, $lightBlue); /* Standard syntax (must be last) */
+    background-color: $white;
+    /* For browsers that do not support gradients */
+    background-image: linear-gradient($darkAqua, $lightBlue);
+    /* Standard syntax (must be last) */
     background-size: cover;
 }
 
@@ -362,7 +381,8 @@ img.dashBubbles {
     border-radius: 1rem;
 }
 
-.suggestCard h6, .suggestCard span {
+.suggestCard h6,
+.suggestCard span {
     @include fontBold;
 }
 
@@ -378,4 +398,3 @@ img.dashBubbles {
 .statsCol {
     background-color: $white;
 }
-

@@ -9,22 +9,13 @@ class Inside extends Controller
 		echo "hello default";
 	}
 
-	public function processSuggestion()
-	{
-		$bSuggestStatus = Suggestion::suggest($_POST["strTitle"], $_POST["strContent"], $_SESSION["userid"]);
-		if ($bSuggestStatus) {
-			header("location: index.php?controller=inside&route=showDashboard&success=true");
-		} else {
-			echo "Coudn't post your suggestion";
-		}
-	}
-
 	public function showDashboard()
 	{
+		User::checkLoggedIn();
 
 		$arrSuggestions = Suggestion::getAll();
 
-		$body = $this->loadView("Views/newSuggest.php", $arrSuggestions); // Passing data to loadView so suggestionList.php can read it
+		$body = $this->loadView("Views/dashboard.php", $arrSuggestions); // Passing data to loadView so suggestionList.php can read it
 
 		include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
 	}

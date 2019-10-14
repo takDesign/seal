@@ -8,7 +8,7 @@
 }
 
 .w100 {
-  widows: 100vw;
+  width: 100vw;
 }
 
 .removeGutter {
@@ -26,7 +26,7 @@
 
 hr.shortSeparator {
   border: 0.5rem solid #d1f9fa;
-  border-radius: 0.3rem;
+  border-radius: .3rem;
   width: 5rem;
 }
 
@@ -37,7 +37,7 @@ hr.shortSeparator {
   font-family: "Raleway", sans-serif;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.05rem;
+  letter-spacing: .05rem;
 }
 
 .btn-primary:hover {
@@ -47,7 +47,8 @@ hr.shortSeparator {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.btn-primary:focus, .btn-primary:not(:disabled):not(.disabled):active {
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled):active {
   color: whitesmoke;
   background-color: #d99c50;
   border-color: rgba(217, 156, 80, 0.25);
@@ -57,19 +58,21 @@ hr.shortSeparator {
   box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
 }
 
-.btn-primary.focus, .btn-primary:focus {
+.btn-primary.focus,
+.btn-primary:focus {
   box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
 }
 
 .btn-lg {
-  padding: 0.5rem 4rem;
+  padding: .5rem 4rem;
 }
 
 @media only screen and (max-width: 1314px) {
   .btn-lg {
-    padding: 0.5rem 1rem;
+    padding: .5rem 1rem;
   }
 }
+
 .btn-secondary {
   background: #d99c50;
   border-color: #d99c50;
@@ -84,7 +87,8 @@ hr.shortSeparator {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.btn-secondary:focus, .btn-secondary:not(:disabled):not(.disabled):active {
+.btn-secondary:focus,
+.btn-secondary:not(:disabled):not(.disabled):active {
   color: whitesmoke;
   background-color: #d99c50;
   border-color: rgba(217, 156, 80, 0.25);
@@ -94,7 +98,8 @@ hr.shortSeparator {
   box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
 }
 
-.btn-secondary.focus, .btn-secondary:focus {
+.btn-secondary.focus,
+.btn-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
 }
 
@@ -114,11 +119,13 @@ hr.shortSeparator {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 }
 
-.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+.btn-outline-secondary:not(:disabled):not(.disabled).active,
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
   border-color: #d99c50;
 }
 
-.btn-outline-secondary:focus, .btn-outline-secondary:not(:disabled):not(.disabled):active {
+.btn-outline-secondary:focus,
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
   color: #d99c50;
   background-color: whitesmoke;
   border-color: rgba(217, 156, 80, 0.25);
@@ -129,7 +136,8 @@ hr.shortSeparator {
   box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
 }
 
-.btn-outline-secondary.focus, .btn-outline-secondary:focus {
+.btn-outline-secondary.focus,
+.btn-outline-secondary:focus {
   box-shadow: 0 0 0 0.2rem rgba(217, 156, 80, 0.25);
 }
 
@@ -148,7 +156,7 @@ body#loginPage {
 
 #loginForm {
   background: whitesmoke;
-  border-radius: 0.7rem;
+  border-radius: .70rem;
 }
 
 #loginText {
@@ -159,7 +167,7 @@ body#loginPage {
   font-family: "Raleway", sans-serif;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.2rem;
+  letter-spacing: .2rem;
 }
 
 #loginText p {
@@ -173,7 +181,7 @@ body#loginPage {
 }
 
 .form-control {
-  border-radius: 0.5rem;
+  border-radius: .50rem;
   color: #245e62;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
@@ -189,13 +197,13 @@ body#loginPage {
 }
 
 .fieldset a {
-  transition: 0.6s ease;
+  transition: .6s ease;
 }
 
 .fieldset a:hover {
   text-decoration: none;
   color: #d99c50;
-  transition: 0.6s ease;
+  transition: .6s ease;
 }
 
 .fieldset p {
@@ -317,7 +325,8 @@ img.dashBubbles {
   border-radius: 1rem;
 }
 
-.suggestCard h6, .suggestCard span {
+.suggestCard h6,
+.suggestCard span {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
 }
@@ -336,5 +345,3 @@ img.dashBubbles {
 .statsCol {
   background-color: whitesmoke;
 }
-
-/*# sourceMappingURL=style.css.map */

@@ -1,14 +1,21 @@
-<div class="listview">
-    <?php
-    foreach ($data as $suggestions) {
-        $dPosted = date('g:i A - j M Y ', strtotime($suggestions->dPosted));
-        echo '<div class="suggestions">' . 'ID: ' . $suggestions->id . '<br>' .
-            '<p class="title">' . 'Title: ' . $suggestions->strTitle . '</p>' .
-            '<p class="suggestion">' . 'Suggestion: ' . $suggestions->strContent . '</p>' .
-            '<p class="date">' . 'Date Posted: ' . $dPosted . '</p>' .
-            '<p class="advocate">' . 'Posted By : ' . $suggestions->strUserName . '</p>' .
-            '<a href="index.php?controller=inside&route=likeSuggestion&id=' . $suggestions->id . '">LIKE</a><br>' .
-            '<a href="index.php?controller=inside&route=deleteSuggestion&id=' . $suggestions->id . '">DELETE</a></div>';
-    }
-    ?>
-</div>
+<!-- SECTION TO BE DYNAMICALLY CREATED VIA PHP -->
+<?php
+foreach ($data as $suggestions) {
+    $dPosted = date('M j, Y  g:i a', strtotime($suggestions->dPosted));
+    echo '
+        <div class="card w-75 mx-auto mt-2 mb-2 shadow-sm suggestCard">
+            <div class="card-body px-5 py-5">
+                <h6 class="card-title"><i class="fas fa-circle fa-lg"></i>' . $suggestions->strUserName . '</h6>
+                <p class="card-text"><em>' . $suggestions->strContent . '</em></p>
+                <div>
+                    <i class="far fa-comment-alt fa-lg mr-3"></i>
+                    <i class="fas fa-heart fa-lg"></i>
+                    <span class="float-right">16 votes</span>
+                </div><!-- //comments votes -->
+                <div class="card-text mt-3">
+                    <small class="cardDate">' . $dPosted . '</small>
+                </div><!-- //date time -->
+            </div><!-- //card-body -->
+        </div><!-- //card -->';
+} ?>
+<!-- END SECTION TO BE DYNAMICALLY CREATED VIA PHP -->

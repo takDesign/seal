@@ -11,7 +11,7 @@ class Outside extends Controller
 
 	public function showLogin()
 	{
-		$body = $this->loadView("Views/loginForm.php");
+		$body = $this->loadView("Views/loginPage.php");
 
 		include("Views/mainTemplate.php"); // this mainTemplate is expecting $body
 	}
@@ -23,12 +23,16 @@ class Outside extends Controller
 
 		if ($bLogInStatus) {
 			// look for a controller called suggestions and the method inside their called "new"
-			header("location: index.php?controller=inside&route=showDashboard");
+			header("location: index.php?controller=inside&route=showDashboard&login=true");
 		} else {
-			echo "jk we couldn't quite get ya there...";
-
-			// header("location: index.php?controller=outside&route=login&error=1");
+			// echo "jk we couldn't quite get ya there...";
+			header("location: index.php?error=ture");
 		}
+	}
+
+	public function createNewUser()
+	{
+		User::saveRegister($_POST["strFirstName"], $_POST["strLastName"], $_POST["strEmail"], $_POST["strUserName"], $_POST["strPassword"]);
 	}
 
 	public function preTrip()

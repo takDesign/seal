@@ -18,13 +18,13 @@ class Suggestion
 		$this->strUserName = $strUserName;
 	}
 
-	public static function suggest($title, $suggestion, $userId)
+	public static function suggest($suggestion, $userId)
 	{
 		date_default_timezone_set('America/Vancouver');
 		$datePosted =  date("Y-m-d H:i:s"); // the MySQL DATETIME format
 		$con = Db::con();
 
-		$num = Db::query($con, "INSERT INTO suggestions (strTitle, strContent, dPosted, nUsersID) VALUES ('" . mysqli_real_escape_string($con, $title) . "', '" . mysqli_real_escape_string($con, $suggestion) . "', '" . $datePosted . "', '" . $userId . "') ");
+		$num = Db::query($con, "INSERT INTO suggestions (strContent, dPosted, nUsersID) VALUES ('" . mysqli_real_escape_string($con, $suggestion) . "', '" . $datePosted . "', '" . $userId . "') ");
 		if ($num) {
 			return true;
 		} else {
