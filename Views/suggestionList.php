@@ -5,7 +5,7 @@ foreach ($data as $suggestions) {
     echo '
         <div class="card w-75 mx-auto mt-2 mb-2 shadow-sm suggestCard">
             <div class="card-body px-5 py-5">
-                <h6 class="card-title"><i class="fas fa-circle fa-lg"></i>' . $suggestions->strUserName . '</h6>
+                <h6 class="card-title"><i class="fas fa-circle fa-lg mr-1"></i>' . $suggestions->strUserName . '</h6>
                 <p class="card-text"><em>' . $suggestions->strContent . '</em></p>
                 <div>
                     <i class="far fa-comment-alt fa-lg mr-3"></i>
