@@ -9,7 +9,7 @@ foreach ($data as $suggestions) {
                 <p class="card-text"><em>' . $suggestions->strContent . '</em></p>
                 <div>
                     <i class="far fa-comment-alt fa-lg mr-3"></i>
-                    <i class="fas fa-heart fa-lg"></i>
+                    <a href="#"><div class="heart" data-type="positive"></div></a>
                     <span class="float-right">16 votes</span>
                 </div><!-- //comments votes -->
                 <div class="card-text mt-3">

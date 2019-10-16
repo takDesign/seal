@@ -1,5 +1,4 @@
 <?php
-
 class Outside extends Controller
 {
 	// index.php?controller=outside&route=default
@@ -45,3 +44,4 @@ class Outside extends Controller
 		// this function will run after running a routes inside this controller
 	}
 }
+?>

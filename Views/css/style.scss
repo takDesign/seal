@@ -339,6 +339,30 @@ img.dashBubbles {
     width: 50%;
     overflow: hidden;
 }
+//HEART ANIMATION ******************
+
+.heart{
+    // float: right;
+    display: inline-block;
+    bottom:50px;
+    position: absolute;
+    cursor: pointer;
+    height: 90px;
+    width: 90px;
+    background-image:url( "../imgs/heart.png");
+    background-position: left;
+    background-repeat:no-repeat;
+    background-size:2900%;
+  }
+  
+  .active {
+    animation: heart-burst .8s steps(28) 1;
+  }
+  
+  @keyframes heart-burst {
+    from {background-position:left;}
+    to { background-position:right;}
+  }
 
 //SUGGESTIONS ***********************
 .suggestCol {
