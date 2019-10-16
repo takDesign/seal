@@ -45,6 +45,8 @@ class Suggestion
 			users.strUserName AS strUserName
 			FROM suggestions 
 			LEFT JOIN users ON users.id=suggestions.nUsersID
+			WHERE users.id
+			ORDER BY suggestions.dPosted DESC
 			"
 		);
 

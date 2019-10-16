@@ -15,6 +15,16 @@ class Util
 
 	public static function log($msg)
 	{
-		echo '<script>console.log("' . $msg . '");</script>';
+		$whitelist = array(
+			'127.0.0.1',
+			'localhost',
+			'::1'
+		);
+		//if on local display, if not don't display
+		if(in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
+			// not valid
+			echo '<script>console.log("' . $msg . '");</script>';
+		}
+		
 	}
 }
