@@ -17,6 +17,7 @@
                     <form method="post" action="index.php?controller=suggestions&route=processSuggestion" class="px-4 py-4 border-bottom">
                         <div class="form-group row">
                             <div class="col-sm-12 px-5 py-3">
+                            <!-- success messages -->
                                 <?php
                                 if (isset($_GET['account'])) {
                                     echo '<p class="mb-3" style="color: green;">Your account is successfully created!</p>';
@@ -68,4 +69,8 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+        <!-- VOTING JS  -->
+        <script src="Views/js/voting.js"></script>
+        <!-- MUSTACHE-REPLACEMENT -->
+        <script src="Views/js/mustache-replacement.js"></script>
     </body>
