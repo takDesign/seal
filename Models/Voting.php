@@ -10,6 +10,8 @@ class Voting
         $con = Db::con();
         // check user login??
 
+        //does this userID match voteID ? If yes, can't vote if no save vote
+
         // save who voted and what they voted on into the db
         if (isset($_GET['nVote'])) {
             
