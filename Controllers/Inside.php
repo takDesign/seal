@@ -11,7 +11,7 @@ class Inside extends Controller
 
 	public function showDashboard()
 	{
-		User::checkLoggedIn();
+		// User::checkLoggedIn();
 
 		$arrSuggestions = Suggestion::getAll();
 
@@ -23,6 +23,11 @@ class Inside extends Controller
 	public function preTrip()
 	{
 		// this function will run before doing any routes inside this controller
+		$nUserID = User::checkLoggedIn();
+		if (!$nUserID)
+		{
+			header("location: index.php?controller=outside&route=login&error=1");
+		}
 	}
 
 	public function postTrip()
