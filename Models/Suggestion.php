@@ -34,20 +34,24 @@ class Suggestion
 
 	public static function getAll()
 	{
-		// go to the database and get a bunch of suggestions
+		// go to the database and get a bunch of suggestions plus votes
 		$con = Db::con();
 		$results = Db::query(
 			$con,
-			"SELECT suggestions.id,
-			suggestions.strTitle,
-			suggestions.strContent,
-			suggestions.dPosted,
-			users.strUserName AS strUserName
-			FROM suggestions 
-			LEFT JOIN users ON users.id=suggestions.nUsersID
-			WHERE users.id
-			ORDER BY suggestions.dPosted DESC
-			"
+			$where = "";
+			if (isset($_GET['nSuggestionsID']))
+			{
+				$where = "WHERE suggestions.id=".$_GET['nSuggestionsID'];
+			}
+
+			$sql = "SELECT suggestions.id, 
+			suggestions.strUserName, 
+			suggestions.strContent, 
+			suggestions.nUsersID, 
+			users.strUserName, 
+			COUNT(votes.id) as totalVotes, SUM(nVotes) as posVotes FROM suggestions 
+			LEFT JOIN users ON users.id = suggestions.nUsersID 
+			LEFT JOIN votes ON votes.nSuggestionsID=suggestions.id $where GROUP BY suggestions.id "
 		);
 
 		while ($suggestion = mysqli_fetch_assoc($results)) {
