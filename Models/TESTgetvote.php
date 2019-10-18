@@ -24,6 +24,4 @@ while($arrDataResult = mysqli_fetch_assoc($results)){
 }
 
 echo json_encode($arrData);
-
-
 ?>
