@@ -15,13 +15,15 @@ if (!$loggedInUserID)
 }
 
 // SAVE VOTE DATA
-$sql = "SELECT nSuggestionID, COUNT(id) as numVotes, SUM(IF(nVote>0, 1, 0)) as posVotes FROM votes GROUP BY nSuggestionID";
+$sql = "SELECT nSuggestionsID, COUNT(id) FROM votes GROUP BY nSuggestionsID";
 
 $results = mysqli_query($con, $sql);
 
 while($arrDataResult = mysqli_fetch_assoc($results)){
-	$arrData[$arrDataResult["nSuggestionID"]] = $arrDataResult;
+	$arrData[$arrDataResult["nSuggestionsID"]] = $arrDataResult;
 }
+
+echo $arrData;
 
 echo json_encode($arrData);
 ?>

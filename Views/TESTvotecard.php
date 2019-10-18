@@ -1,3 +1,6 @@
+<?php
+include ('../Models/TESTconnection.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,15 +28,24 @@
 </head>
 <!--html framework with body tag -->
 <body id="dashboardPage">
-
-                    <div id="suggestionList" class="card w-75 mx-auto mt-2 mb-2 shadow-sm suggestCard">
-                        <div class="card-body px-5 py-5 suggestion" data-suggestionid="<?=$suggestion["id"]?>">
-                            <h6 class="card-title"><i class="fas fa-circle fa-lg mr-1"></i>Username</h6>
-                            <p class="card-text"><em>Content</em></p>
+<?php
+	                while($suggestion = mysqli_fetch_assoc($results)){
+                    ?>
+                    <div id="suggestionList" class="card w-75 mx-auto mt-2 mb-2 shadow-sm suggestCard" data-suggestionid="<?=$suggestion["id"]?>">
+                        <div class="card-body px-5 py-5 suggestion" >
+                            <h6 class="card-title"><i class="fas fa-circle fa-lg mr-1"></i><?=$suggestion["strUserName"]?></h6>
+                            <p class="card-text"><em><?=$suggestion["strContent"]?></em></p>
                             <div class="votesystem">
                                 <i class="far fa-comment-alt fa-lg mr-3"></i>
-                                <a href="#"><div class="heart" data-type="positive"></div></a>
-                                <span class="float-right count">17 votes</span>
+
+                                <a href="#" class="pos">
+                                    <i class="fas fa-heart fa-lg heart" data-type="positive"></i>
+                                </a>
+
+                                <span class="float-right">
+                                    <span class="count"></span> 
+                                    votes
+                                </span>
                             </div><!-- //comments votes -->
                             <div class="card-text mt-3">
                                 <small class="cardDate">Date-Time</small>
@@ -41,7 +53,9 @@
                         </div><!-- //card-body -->
                     </div><!-- //card -->
 
-
+                    <?php
+                    }
+                    ?>
         <!-- JS FORM VALIDATION -->
         <script src="Views/js/form-validation-plugin.js"></script>
         <script src="Views/js/heart.js"></script>
@@ -59,5 +73,76 @@
         <script src="Views/js/voting.js"></script>
         <!-- MUSTACHE-REPLACEMENT -->
         <script src="Views/js/mustache-replacement.js"></script>
+
+        
+<script>
+
+
+$(function()
+{
+	// functionally scopped variable
+	var dataPackage = {};
+
+	// GO GET ALL SUGGESTION DATA
+	$.ajax({
+        url: "../Models/TESTgetvote.php",
+        dataType: "json",
+        success: function(data)
+        {
+            dataPackage = data;
+
+            /// ONLY START CREATING THE OBJECTS ONCE DATA IS RETURNED
+            $(".suggestion").each(function(index, thisDOMObject){
+                new VoteSystem(thisDOMObject, dataPackage);
+            })
+        }
+    });
+});
+
+var VoteSystem = function(thisDOMObject, dataPackage)
+{
+	var vs = this;
+	vs.dataPackage = dataPackage;
+	vs.element = thisDOMObject;
+	vs.nSuggestionsID = $(thisDOMObject).data("suggestionid");
+
+	vs.vote = function(voteType)
+	{
+		var nVote = -1;
+		if (voteType == "positive")
+		{
+			nVote = 1;
+		}
+		
+		$.ajax({
+			url: "../Models/TESTsavevote.php?nSuggestionsID="+vs.nSuggestionsID+"&nVote="+nVote,
+			dataType: "json",
+			success: function(data)
+			{
+				// update the pos votes and neg votes
+				$(".pos .count", vs.element).html(data.posVotes);
+			}
+		})
+	}
+
+	vs.loadVoteHistory = function()
+	{
+		if (typeof vs.dataPackage[vs.nSuggestionsID] != "undefined")
+		{
+			// update the pos votes and neg votes
+			$(".pos .count", vs.element).html(vs.dataPackage[vs.nSuggestionsID].posVotes);
+		}
+	}
+
+	$(".heart", thisDOMObject).click(function()
+	{
+		var voteType = $(this).data("type");
+		vs.vote(voteType);
+		
+	});
+	vs.loadVoteHistory();
+}
+
+</script>
     </body>
 </html>
