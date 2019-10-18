@@ -9,6 +9,7 @@ class Voting
         // db connection
         $con = Db::con();
         // check user login??
+        $checkLogin = Inside::preTrip();
 
         //does this userID match voteID ? If yes, can't vote if no save vote
 

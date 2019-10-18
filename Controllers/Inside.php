@@ -11,7 +11,7 @@ class Inside extends Controller
 
 	public function showDashboard()
 	{
-		// User::checkLoggedIn();
+		$this->preTrip();
 
 		$arrSuggestions = Suggestion::getAll();
 

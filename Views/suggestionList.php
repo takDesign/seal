@@ -10,7 +10,7 @@ foreach ($data as $suggestions) {
                 <div class="votesystem">
                     <i class="far fa-comment-alt fa-lg mr-3"></i>
                     <a href="#"><div class="heart" data-type="positive"></div></a>
-                    <span class="float-right count">{votes} votes</span>
+                    <span class="float-right count">16 votes</span>
                 </div><!-- //comments votes -->
                 <div class="card-text mt-3">
                     <small class="cardDate">' . $dPosted . '</small>
