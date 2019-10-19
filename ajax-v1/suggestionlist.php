@@ -70,11 +70,10 @@ LEFT JOIN suggestions ON users.id=suggestions.nUsersID";
 $results = mysqli_query($con, $sql);
 ?>
 <!-- alternatative: turn the suggestionlist into a component, just like your table was in the table ajax assignment. then make a load data request via ajax and load ALL your suggestions in as an ajax data response, then loop over them and create the HTML -->
-
 <div id="suggestionlist">
 	<?php
-	while($suggestion = mysqli_fetch_assoc($results)){
-
+	while($suggestion = mysqli_fetch_assoc($results))
+	{
 		?>
 		<div class="suggestion" data-nSuggestionsID="<?=$suggestion["id"]?>">
 			<h2><?=$suggestion["strUserName"]?></h2>
@@ -92,8 +91,9 @@ $results = mysqli_query($con, $sql);
 	<?php
 	}
 	?>
-	
 </div>
+
+
 <script
   src="http://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

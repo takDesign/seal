@@ -1,8 +1,8 @@
 <?php
-include("functions/functions.php");
+include("functions.php");
 
 // this file will only be on pages I want to make sure are password protected
-include("functions/checklogin.php");
+include("checklogin.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,7 +20,7 @@ include("functions/checklogin.php");
 <div id="suggestionlist" class="saltandpepper" data-api="getsuggestions.php" data-callback="bindVoteSystem">
 	<div class="suggestion" data-suggestionid="{id}">
 		<h2>{strName}</h2>
-		<p>{strSuggestion}</p>
+		<p>{strContent}</p>
 		<div class="votesystem">
 			<div class="pos">
 				<a href="#"><div class="heart" data-type="positive"></div></a>
@@ -38,7 +38,7 @@ include("functions/checklogin.php");
   src="http://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
- <script type="text/javascript" src="js/TemplateParser.js"></script>
- <script type="text/javascript" src="js/main.js"></script>
+ <script type="text/javascript" src="TemplateParser.js"></script>
+ <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

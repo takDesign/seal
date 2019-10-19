@@ -1,18 +1,14 @@
 <?php
-include("functions/functions.php");
+include("functions.php");
 
 // this file will only be on pages I want to make sure are password protected
-include("functions/checklogin.php");
+include("checklogin.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>	</title>
-	<link rel="stylesheet" type="text/css" href="css/heartcss.css">
 	<style>
-		.votesystem { overflow: auto; }
-		.votesystem .votesystem .pos, .votesystem .votesystem .neg {float: left;}
-		.heart {display: inline-block;}
 	</style>
 </head>
 <body>

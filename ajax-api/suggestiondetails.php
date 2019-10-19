@@ -1,33 +1,32 @@
 <?php
-include("functions/functions.php");
+include("functions.php");
 
 // this file will only be on pages I want to make sure are password protected
-include("functions/checklogin.php");
+include("checklogin.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>	</title>
+	<title></title>
 	<link rel="stylesheet" type="text/css" href="css/heartcss.css">	
 </head>
 <body>
 <a href="suggestionform.php">make new suggestion</a>
 
-<div class="saltandpepper" data-api="getsuggestions.php?nSuggestionID=<?=$_GET['id']?>">
+<div class="saltandpepper" data-api="getsuggestions.php?nSuggestionsID=<?=$_GET['id']?>">
 	<h1>{strName}</h1>
-	<p>{strSuggestion}</p>
+	<p>{strContent}</p>
 </div>
 
-<div class="voteHistory saltandpepper" data-api="getvotehistory.php?nSuggestionID=<?=$_GET['id']?>">
-	{strEmail}, voted {nVote}<Br/>
+<div class="voteHistory saltandpepper" data-api="getvotehistory.php?nSuggestionsID=<?=$_GET['id']?>">
+	{strUserName}, voted {nVote}<Br/>
 </div>
-
 
 <script
   src="http://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
- <script type="text/javascript" src="js/TemplateParser.js"></script>
- <script type="text/javascript" src="js/main.js"></script>
+ <script type="text/javascript" src="TemplateParser.js"></script>
+ <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

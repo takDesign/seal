@@ -1,8 +1,8 @@
 <?php
 
-include("functions/functions.php");
+include("functions.php");
 
-$sql = "SELECT * FROM users WHERE strEmail='".$_POST["strEmail"]."' and strPassword='".$_POST['strPassword']."'";
+$sql = "SELECT * FROM users WHERE strUserName='".$_POST["strUserName"]."' and strPassword='".$_POST['strPassword']."'";
 
 $results = mysqli_query($con, $sql);
 $arrCurrentUser = mysqli_fetch_assoc($results);

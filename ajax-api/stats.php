@@ -1,14 +1,15 @@
 <?php
-include("functions/functions.php");
+include("functions.php");
 
 // this file will only be on pages I want to make sure are password protected
-include("functions/checklogin.php");
+include("checklogin.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>	</title>
 	<link rel="stylesheet" type="text/css" href="css/heartcss.css">	
+	<script src="https://kit.fontawesome.com/2a49eb69db.js"></script>
 </head>
 <body>
 <a href="suggestionform.php">make new suggestion</a>
@@ -28,7 +29,7 @@ include("functions/checklogin.php");
   src="http://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
- <script type="text/javascript" src="js/TemplateParser.js"></script>
- <script type="text/javascript" src="js/main.js"></script>
+ <script type="text/javascript" src="TemplateParser.js"></script>
+ <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

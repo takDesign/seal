@@ -1,10 +1,10 @@
 <?php
 
-include("functions/functions.php");
-include("functions/checklogin.php");
+include("functions.php");
+include("checklogin.php");
 
 
-$sql = "INSERT INTO suggestion (strName, strSuggestion, nUsersID) VALUES ('".$_POST['strName']."','".$_POST['strSuggestion']."','".$loggedInUserID."')";
+$sql = "INSERT INTO suggestions (strUserName, strContent, nUsersID) VALUES ('".$_POST['strUserName']."','".$_POST['strContent']."','".$loggedInUserID."')";
 
 mysqli_query($con, $sql);
 
