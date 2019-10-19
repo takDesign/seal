@@ -19,6 +19,8 @@ $(function()
 			}
 		});
 	});
+
+	
 });
 
 
@@ -45,5 +47,7 @@ var TemplateParser = function(dataObject,templateObject)
 		}
 		newHTML = newHTML + tempHTML;
 	}
+
 	templateObject.innerHTML = newHTML;
+
 }

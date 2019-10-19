@@ -1,3 +1,5 @@
+
+
 $(function()
 {
 	$(".saltandpepper").each(function(index, templateObject)
@@ -43,12 +45,13 @@ var VoteSystem = function(thisDOMObject)
 		}
 		
 		$.ajax({
-			url: "savevote.php?suggestionsID="+vs.suggestionID+"&nVote="+nVote,
+			url: "savevote.php?suggestionID="+vs.suggestionID+"&nVote="+nVote,
 			dataType: "json",
 			success: function(data)
 			{
 				// update the pos votes and neg votes
 				$(".pos .count", vs.element).html(data.posVotes);
+				$(".neg .count", vs.element).html(data.numVotes-data.posVotes);
 			}
 		})
 	}
@@ -57,5 +60,6 @@ var VoteSystem = function(thisDOMObject)
 	{
 		var voteType = $(this).data("type");
 		vs.vote(voteType);
+		
 	});
 }
