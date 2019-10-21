@@ -1,4 +1,6 @@
 // COLORS ---------------------------------------------------------------------
+$red: #dc3545;
+
 $orange: #d99c50;
 $rgbO: 217,
 156,
@@ -218,9 +220,18 @@ body#loginPage {
     height: 10rem;
 }
 
-#loginForm {
+.formWrapper {
     background: $white;
     border-radius: .70rem;
+
+    #inputUsername-error,
+    #inputPassword-error,
+    #inputFirstName-error,
+    #inputLastName-error,
+    #inputEmail-error {
+        color: $red;
+        font-size: 14px;
+    }
 }
 
 #loginText {
@@ -243,18 +254,31 @@ body#loginPage {
     height: 100vh;
 }
 
-.form-control {
+.form {
     border-radius: .50rem;
     color: $darkAqua;
     @include fontReg;
     background-color: $lightGray;
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.form-control:focus {
+.form:focus {
     color: $darkAqua;
     @include fontBold;
     background-color: $lightGray;
     box-shadow: 0 0 0 .1rem rgba(107, 196, 209, 1);
+}
+
+.fieldset .note {
+    line-height: 1;
 }
 
 .fieldset a {
@@ -339,30 +363,36 @@ img.dashBubbles {
     width: 50%;
     overflow: hidden;
 }
+
 //HEART ANIMATION ******************
 
-.heart{
+.heart {
     // float: right;
     display: inline-block;
-    bottom:50px;
+    bottom: 50px;
     position: absolute;
     cursor: pointer;
     height: 90px;
     width: 90px;
-    background-image:url( "../imgs/heart.png");
+    background-image: url("../imgs/heart.png");
     background-position: left;
-    background-repeat:no-repeat;
-    background-size:2900%;
-  }
-  
-  .active {
+    background-repeat: no-repeat;
+    background-size: 2900%;
+}
+
+.active {
     animation: heart-burst .8s steps(28) 1;
-  }
-  
-  @keyframes heart-burst {
-    from {background-position:left;}
-    to { background-position:right;}
-  }
+}
+
+@keyframes heart-burst {
+    from {
+        background-position: left;
+    }
+
+    to {
+        background-position: right;
+    }
+}
 
 //SUGGESTIONS ***********************
 .suggestCol {
