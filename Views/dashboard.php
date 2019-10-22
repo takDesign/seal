@@ -23,7 +23,7 @@
                         <li><a href="index.php?controller=outside&route=processLogout"> <i class="fas fa-sign-out-alt"></i> Logout</a></li>
                     </ul>
 
-                   
+
 
                 </div><!--  //accountsCol -->
 
@@ -44,7 +44,7 @@
                                 }
                                 ?>
                                 <p class="h2 mb-3">Have an idea?</p>
-                                <input name="strContent" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Enter your suggestion here">
+                                <input name="strContent" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Enter your suggestion here" required>
                                 <div class="fieldset float-right mt-4">
                                     <button class="btn btn-primary btn-lg" type="submit">Suggest it</button>
                                 </div><!-- //fieldset -->
@@ -62,11 +62,11 @@
                 </div><!--  //suggestionsCol -->
 
                 <div class="col-md-1 shadow statsCol fixed-top">
-                        <div class="logoSm d-flex justify-content-center">
-                            <img src="Views/imgs/logo.png" alt="seal logo" class="fluid mt-4 logoSm">
-                        </div>
+                    <div class="logoSm d-flex justify-content-center">
+                        <img src="Views/imgs/logo.png" alt="seal logo" class="fluid mt-4 logoSm">
+                    </div>
 
-                        <!-- STATS - HARD CODED 
+                    <!-- STATS - HARD CODED 
                         <ul>
                             <li><h1>8</h1> Votes Left</li>
                             <li><h1>8</h1> Votes Used</li>
