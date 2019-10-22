@@ -7,11 +7,11 @@ foreach ($data as $suggestions) {
             <div class="card-body px-5 py-5">
                 <h6 class="card-title"><i class="fas fa-circle fa-lg mr-1"></i>' . $suggestions->strUserName . '</h6>
                 <p class="card-text"><em>' . $suggestions->strContent . '</em></p>
-                <div>
+                <!-- <div>
                     <i class="far fa-comment-alt fa-lg mr-3"></i>
                     <a href="#"><div class="heart" data-type="positive"></div></a>
                     <span class="float-right">16 votes</span>
-                </div><!-- //comments votes -->
+                comments votes -->
                 <div class="card-text mt-3">
                     <small class="cardDate">' . $dPosted . '</small>
                 </div><!-- //date time -->
