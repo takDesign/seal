@@ -42,7 +42,7 @@ class User
 		if ($_SESSION["userid"]) {
 			return $_SESSION["userid"];
 		} else {
-			return false;
+			header ("location: index.php?error=true");
 		}
 	} // end check logged in function
 

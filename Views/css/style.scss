@@ -313,16 +313,88 @@ body#loginPage {
     padding: 0;
 }
 
+// RESPONSIVE MIX INS
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-max: 576px;
+
+// Small tablets (portrait view)
+$screen-md-max: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+
+// Small devices
+@mixin sm {
+  @media (max-width: #{$screen-sm-max}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (max-width: #{$screen-md-max}) {
+      @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
 //DASHBOARD PAGE --------------------------------------------------------------
 
 //USER ACCOUNT INFO***********************
 .accountCol {
+    position: sticky;
+    height: 100vh;
+    overflow: hidden;
     border-radius: 0px 50px 0px 0px;
     background-color: $white;
     /* For browsers that do not support gradients */
     background-image: linear-gradient($darkAqua, $lightBlue);
     /* Standard syntax (must be last) */
     background-size: cover;
+    @include sm {
+        position: block;
+        height: 35vh;
+        border-radius: 0px 0px 60px 60px;
+    }
+    .dashBubbles {
+        @include sm {
+            position: absolute;
+            z-index: -1;
+        }
+    }
+
+
+    // stats menu icon and text link, not displayed for now
+    .statMenuMobile {
+        display: none;
+        @include sm {
+            display: none;
+            a {
+                color: $white;
+                float: right;
+                text-transform: uppercase;
+                font-family: $font;
+            }
+        }
+    }
 }
 
 .accountCol .h2 {
@@ -333,6 +405,22 @@ body#loginPage {
 .accountCol .h3 {
     color: $lightAqua;
     @include fontBold;
+}
+
+.accountCol ul {
+    margin-left: -2rem;
+    margin-top: 20rem;
+    @include sm {
+        margin-top: 2rem;
+    }
+    li {
+        list-style: none;
+        a {
+            color: $white;
+            font: $font;
+            text-transform: uppercase;
+        }
+    }
 }
 
 img.dashBubbles {
@@ -365,6 +453,8 @@ img.dashBubbles {
   }
 
 //SUGGESTIONS ***********************
+
+
 .suggestCol {
     background-color: $lightGray;
     min-height: 100vh;
@@ -373,11 +463,21 @@ img.dashBubbles {
 
 .suggestCol form {
     background-color: #fff;
+    // @include sm {
+    //     position: absolute;
+    //     top: -180px;
+    //     left: 0;
+    //     z-index: 99999999;
+    //     background-color: transparent;
+    // }
 }
 
 .suggestCol .h2 {
     @include fontBold;
     color: $darkAqua;
+    @include sm {
+        display: none;
+    }
 }
 
 .suggestCol input {
@@ -421,4 +521,25 @@ img.dashBubbles {
 //USER STATS INFO***********************
 .statsCol {
     background-color: $white;
+    position: sticky;
+    height: 100vh;
+    @include sm {
+        display: none;
+    } // not displayed on mobile until we can set up the 'view stats' slide in menu
+    ul {
+        text-align: right;
+        padding: 0;
+        margin-top: 10rem;
+        li {
+            list-style: none;
+            font-family: $font;
+            color: $darkAqua;
+            text-transform: uppercase;
+            padding: 9px;
+            h1 {
+                color: $orange;
+                font-weight: 900;
+            }
+        }
+    }
 }
