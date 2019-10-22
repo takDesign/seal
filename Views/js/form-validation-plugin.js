@@ -1,7 +1,7 @@
 // customize validation for jquery.validate.min.js
 $.validator.addMethod(
 	"myregex",
-	function(value, element, reg_str) {
+	function (value, element, reg_str) {
 		var re = new RegExp(reg_str);
 		return re.test(value);
 	},
@@ -9,12 +9,14 @@ $.validator.addMethod(
 );
 
 var pReg = /^(?=.*?[a-zA-Z])(?=.*?\d)(?=.*?[!-\/:-@[-`{-~])[!-~]/; // regular expression for password
+var eReg = /.+@.+\..+/; // regular expression for email
+
 $("#login").validate({
 	rules: {
-		username: {
-			minlength: 2,
+		email: {
+			minlength: 5,
 			maxlength: 100,
-			myregex: "^[a-zA-Z]",
+			myregex: eReg,
 			required: true
 		},
 		password: {
@@ -26,18 +28,15 @@ $("#login").validate({
 		}
 	},
 	messages: {
-		username: {
-			required:
-				"The user name must have at least 2 charactors and contain only letters."
+		email: {
+			required: "Please enter valid email"
 		},
 		password: {
-			required:
-				"The password must contain at least 1 Uppercase character, lowercase character, number and special charactor."
+			required: "The password must contain at least 1 Uppercase character, lowercase character, number and special charactor."
 		}
 	}
 });
 
-var eReg = /.+@.+\..+/; // regular expression for email
 $("#register").validate({
 	rules: {
 		strFirstName: {
@@ -73,24 +72,19 @@ $("#register").validate({
 	},
 	messages: {
 		strFirstName: {
-			required:
-				"First name must have at least 2 charactors and contain only letters."
+			required: "First name must have at least 2 charactors and contain only letters."
 		},
 		strLastName: {
-			required:
-				"Last name must have at least 2 charactors and contain only letters."
+			required: "Last name must have at least 2 charactors and contain only letters."
 		},
 		strEmail: {
-			required:
-				"Please enter valid email"
+			required: "Please enter valid email"
 		},
 		strUserName: {
-			required:
-				"The user name must have at least 2 charactors and contain only letters."
+			required: "The user name must have at least 2 charactors and contain only letters."
 		},
 		strPassword: {
-			required:
-				"The password must contain at least 1 Uppercase character, lowercase character, number and special charactor."
+			required: "The password must contain at least 1 Uppercase character, lowercase character, number and special charactor."
 		}
 	}
 });

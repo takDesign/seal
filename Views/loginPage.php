@@ -24,25 +24,23 @@
                             <!-- selecting controller and route upon form submission -->
                             <div class="formHeader">
                                 <p class="h2">Sign in</p>
+                                <p>To see the latest suggestions</p>
                                 <?php
                                 if (isset($_GET['error'])) {
-                                    echo '<p style="color:red;">Incorrect username or password.</p>';
+                                    echo '<p class="error">Incorrect Email or Password.</p>';
                                 }
                                 ?>
-                                <p>To see the latest suggestions</p>
                             </div>
 
                             <div class="fieldset">
-                                <label for="inputUsername" class="sr-only">Username</label>
-                                <input type="text" name="username" id="inputUsername" class="form" placeholder="Username" autofocus>
-                                <!-- <div class="invalid-feedback">Uh oh, can you check your username?</div> -->
+                                <label for="inputEmail" class="sr-only">Email</label>
+                                <input type="text" name="email" id="inputEmail" class="form" placeholder="Email" autofocus>
                             </div>
 
                             <div class="fieldset mt-2">
                                 <label for="inputPassword" class="sr-only">Password</label>
                                 <input type="password" name="password" id="inputPassword" class="form password" placeholder="Password">
                                 <small class="note">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor.</small>
-                                <!-- <div class="invalid-feedback">Uh oh, can you try your password again?</div> -->
                             </div>
 
                             <div class="fieldset mt-4 mb-4">

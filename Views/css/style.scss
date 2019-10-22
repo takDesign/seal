@@ -220,6 +220,16 @@ body#loginPage {
     height: 10rem;
 }
 
+.error {
+    color: $red;
+    font-size: 14px;
+}
+
+.success {
+    color: green;
+    font-size: 14px;
+}
+
 .formWrapper {
     background: $white;
     border-radius: .70rem;
@@ -233,6 +243,8 @@ body#loginPage {
         font-size: 14px;
     }
 }
+
+
 
 #loginText {
     color: $lightAqua;

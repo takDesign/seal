@@ -2,12 +2,12 @@
 
 class User
 {
-	static public function login($username, $password)
+	static public function login($email, $password)
 	{
 		$con = Db::con();
 
 		//IMPORTANT --> you have to just check for username
-		$results = Db::query($con, "SELECT * FROM users WHERE strUserName='" . mysqli_real_escape_string($con, $username) . "'");
+		$results = Db::query($con, "SELECT * FROM users WHERE strEmail='" . mysqli_real_escape_string($con, $email) . "'");
 
 		$user = mysqli_fetch_assoc($results);
 

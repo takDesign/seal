@@ -19,17 +19,17 @@
                             <div class="col-sm-12 px-5 py-3">
                                 <?php
                                 if (isset($_GET['account'])) {
-                                    echo '<p class="mb-3" style="color: green;">Your account is successfully created!</p>';
+                                    echo '<p class="mb-3 success">Your account is successfully created!</p>';
                                 } else if (isset($_GET['login'])) {
-                                    echo '<p class="mb-3" style="color: green;">You have successfully logged in!</p>';
+                                    echo '<p class="mb-3 success">You have successfully logged in!</p>';
+                                }
+                                ?>
+                                <?php
+                                if (isset($_GET['success'])) {
+                                    echo '<p class="success"}>Suggestion Posted!</p>';
                                 }
                                 ?>
                                 <p class="h2 mb-3">Have an idea?</p>
-                                <?php
-                                if (isset($_GET['success'])) {
-                                    echo '<p style="color:green"}>Suggestion Posted!</p>';
-                                }
-                                ?>
                                 <input name="strContent" class="form-control form-control-lg" id="colFormLabelLg" placeholder="Enter your suggestion here">
                                 <div class="fieldset float-right mt-4">
                                     <button class="btn btn-primary btn-lg" type="submit">Suggest it</button>
@@ -65,7 +65,5 @@
         <!-- BOOTSTRAP JS -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <!-- JQUERY -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     </body>

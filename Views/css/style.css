@@ -154,6 +154,16 @@ body#loginPage {
   height: 10rem;
 }
 
+.error {
+  color: #dc3545;
+  font-size: 14px;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+}
+
 .formWrapper {
   background: whitesmoke;
   border-radius: .70rem;
