@@ -29,6 +29,13 @@ class Outside extends Controller
 		}
 	}
 
+	public function processLogout()
+	{
+		$_SESSION['userID'] = false;
+		session_destroy();
+		header("location: index.php");
+	}
+
 	public function createNewUser()
 	{
 		User::saveRegister($_POST["strFirstName"], $_POST["strLastName"], $_POST["strEmail"], $_POST["strUserName"], $_POST["strPassword"]);

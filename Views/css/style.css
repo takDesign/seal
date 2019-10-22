@@ -26,7 +26,7 @@
 
 hr.shortSeparator {
   border: 0.5rem solid #d1f9fa;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   width: 5rem;
 }
 
@@ -37,7 +37,7 @@ hr.shortSeparator {
   font-family: "Raleway", sans-serif;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: .05rem;
+  letter-spacing: 0.05rem;
 }
 
 .btn-primary:hover {
@@ -64,15 +64,14 @@ hr.shortSeparator {
 }
 
 .btn-lg {
-  padding: .5rem 4rem;
+  padding: 0.5rem 4rem;
 }
 
 @media only screen and (max-width: 1314px) {
   .btn-lg {
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 }
-
 .btn-secondary {
   background: #d99c50;
   border-color: #d99c50;
@@ -166,7 +165,7 @@ body#loginPage {
 
 .formWrapper {
   background: whitesmoke;
-  border-radius: .70rem;
+  border-radius: 0.7rem;
 }
 
 .formWrapper #inputUsername-error,
@@ -186,7 +185,7 @@ body#loginPage {
   font-family: "Raleway", sans-serif;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
 }
 
 #loginText p {
@@ -229,13 +228,13 @@ body#loginPage {
 }
 
 .fieldset a {
-  transition: .6s ease;
+  transition: 0.6s ease;
 }
 
 .fieldset a:hover {
   text-decoration: none;
   color: #d99c50;
-  transition: .6s ease;
+  transition: 0.6s ease;
 }
 
 .fieldset p {
@@ -289,12 +288,42 @@ body#loginPage {
 }
 
 .accountCol {
+  position: sticky;
+  height: 100vh;
+  overflow: hidden;
   border-radius: 0px 50px 0px 0px;
   background-color: whitesmoke;
   /* For browsers that do not support gradients */
   background-image: linear-gradient(#245e62, #6bc4d1);
   /* Standard syntax (must be last) */
   background-size: cover;
+}
+@media (max-width: 576px) {
+  .accountCol {
+    position: block;
+    height: 35vh;
+    border-radius: 0px 0px 60px 60px;
+  }
+}
+@media (max-width: 576px) {
+  .accountCol .dashBubbles {
+    position: absolute;
+    z-index: -1;
+  }
+}
+.accountCol .statMenuMobile {
+  display: none;
+}
+@media (max-width: 576px) {
+  .accountCol .statMenuMobile {
+    display: none;
+  }
+  .accountCol .statMenuMobile a {
+    color: whitesmoke;
+    float: right;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+  }
 }
 
 .accountCol .h2 {
@@ -307,6 +336,24 @@ body#loginPage {
   color: #d1f9fa;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
+}
+
+.accountCol ul {
+  margin-left: -2rem;
+  margin-top: 20rem;
+}
+@media (max-width: 576px) {
+  .accountCol ul {
+    margin-top: 2rem;
+  }
+}
+.accountCol ul li {
+  list-style: none;
+}
+.accountCol ul li a {
+  color: whitesmoke;
+  font: "Raleway", sans-serif;
+  text-transform: uppercase;
 }
 
 img.dashBubbles {
@@ -339,7 +386,6 @@ img.dashBubbles {
     background-position: right;
   }
 }
-
 .suggestCol {
   background-color: #E8E8E8;
   min-height: 100vh;
@@ -354,6 +400,11 @@ img.dashBubbles {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   color: #245e62;
+}
+@media (max-width: 576px) {
+  .suggestCol .h2 {
+    display: none;
+  }
 }
 
 .suggestCol input {
@@ -402,4 +453,29 @@ img.dashBubbles {
 
 .statsCol {
   background-color: whitesmoke;
+  position: sticky;
+  height: 100vh;
 }
+@media (max-width: 576px) {
+  .statsCol {
+    display: none;
+  }
+}
+.statsCol ul {
+  text-align: right;
+  padding: 0;
+  margin-top: 10rem;
+}
+.statsCol ul li {
+  list-style: none;
+  font-family: "Raleway", sans-serif;
+  color: #245e62;
+  text-transform: uppercase;
+  padding: 9px;
+}
+.statsCol ul li h1 {
+  color: #d99c50;
+  font-weight: 900;
+}
+
+/*# sourceMappingURL=style.css.map */
