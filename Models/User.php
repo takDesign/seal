@@ -2,12 +2,12 @@
 
 class User
 {
-	static public function login($username, $password)
+	static public function login($email, $password)
 	{
 		$con = Db::con();
 
 		//IMPORTANT --> you have to just check for username
-		$results = Db::query($con, "SELECT * FROM users WHERE strUserName='" . mysqli_real_escape_string($con, $username) . "'");
+		$results = Db::query($con, "SELECT * FROM users WHERE strEmail='" . mysqli_real_escape_string($con, $email) . "'");
 
 		$user = mysqli_fetch_assoc($results);
 
@@ -92,7 +92,7 @@ class User
 				$error .= 'emailError=true&';
 			}
 		}
-		// username validation -
+		// username validation - letters 
 		if ($_POST['strUserName'] !== '') {
 			$userName = $_POST['strUserName'];
 			$reg =  "/^([a-zA-Z'\-_ ]+){2,}$/";
@@ -105,8 +105,7 @@ class User
 		// password validation - 
 		if ($_POST['strPassword'] !== '') {
 			$password = $_POST['strPassword'];
-			// $reg = '/^(?=.*\d)(?=.*[A-Z])(?=.*[!@#$%])[0-9A-Za-z!@#$%]{8,20}$/';
-			$reg = '/\A(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\d)[a-zA-Z\d]{8,100}+\z/'; // check if it is longer than 8 chnaractors and  has lowercase, uppercase, number 
+			$reg = '/\A(?=.*?[a-zA-Z])(?=.*?\d)(?=.*?[!-\/:-@[-`{-~])[!-~]{8,100}+\z/i'; // check if it is longer than 8 charactors and  has lowercase, uppercase, number, special charactor 
 			$reg_check = preg_match($reg, $password);
 			$validPassword = ($reg_check) ? true : false;
 			if (!$validPassword) {

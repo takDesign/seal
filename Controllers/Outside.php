@@ -18,7 +18,7 @@ class Outside extends Controller
 	public function processLogin()
 	{
 		//I also have to send things here...
-		$bLogInStatus = User::login($_POST["username"], $_POST["password"]);
+		$bLogInStatus = User::login($_POST["email"], $_POST["password"]);
 
 		if ($bLogInStatus) {
 			// look for a controller called suggestions and the method inside their called "new"
@@ -51,4 +51,3 @@ class Outside extends Controller
 		// this function will run after running a routes inside this controller
 	}
 }
-?>
