@@ -208,7 +208,7 @@ $btnRadius: 10rem;
 
 //LOGIN PAGE ---------------------------------------------------------------------------
 body#loginPage {
-    background-image: url("../imgs/bg-login.jpg");
+    background-image: url("../imgs/backgroundMinusFish.png");
     background-size: cover;
     background-position: center center;
     height: 100vh;
@@ -454,6 +454,7 @@ $screen-xl-min: 1200px;
         a {
             color: $white;
             font: $font;
+            font-size: 2em;
             text-transform: uppercase;
         }
     }
@@ -463,6 +464,305 @@ img.dashBubbles {
     width: 50%;
     overflow: hidden;
 }
+
+/* FISH ANIMATION---------------------------------*/
+.oneSmall{
+    animation:14s fly infinite linear; 
+    width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.one{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:15s fly infinite linear;
+}
+
+.twoSmall{
+    animation:16s flyMid infinite linear; 
+    width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.two{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:18s flyMid infinite linear;
+}
+
+.threeSmall{
+    animation:20s flyMid infinite linear; 
+    width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.three{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:22s flyMid infinite linear;
+}
+
+.fourSmall{
+animation:20s flyLower infinite linear; 
+width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.four{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:22s flyLower infinite linear;
+}
+
+.fiveSmall{
+animation:20s flyLower infinite linear; 
+width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.five{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:22s flyLower infinite linear;
+}
+
+
+.sixSmall{
+animation:15s flyLower infinite linear; 
+width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.six{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:22s flyLower infinite linear;
+}
+
+.sevenSmall{
+animation:15s flyLower infinite linear; 
+width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.seven{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:22s flyLower infinite linear;
+}
+
+.eightSmall{
+animation:15s flyLowest infinite linear; 
+width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.eight{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:22s flyLowest infinite linear;
+}
+
+
+.nineSmall{
+animation:15s flyLowest infinite linear; 
+width:100px;
+  height:100px;
+  position:absolute;
+}
+
+.nine{
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:22s flyLowest infinite linear;
+}
+
+.fishSmall{
+    animation:12s fly infinite linear; 
+    width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+}
+
+.fish {
+  width:100px;
+  height:100px;
+  top:50%;
+  right:50%;
+  position:absolute;
+  animation:10s fly infinite linear;
+}
+
+@keyframes fly {
+  0%,
+  100% {
+    right:10%;
+    transform:rotateY(180deg);
+    top:120px;
+  }
+  1% {
+    transform:rotateY(0deg);
+  }
+  25% {
+    top:180px;
+  }
+  49% {
+    transform:rotateY(0deg);
+  }
+  50% {
+    right:90%;
+    top:150px;
+    transform:rotateY(180deg);
+  }
+  75% {
+    top:90px;
+  }
+}
+
+
+@keyframes flyLowest {
+  0%,
+  100% {
+    right:0%;
+    transform:rotateY(180deg);
+    top:380px;
+  }
+  1% {
+    transform:rotateY(0deg);
+  }
+  25% {
+    top:80px;
+  }
+  49% {
+    transform:rotateY(0deg);
+  }
+  50% {
+    right:90%;
+    top:150px;
+    transform:rotateY(180deg);
+  }
+  75% {
+    top:380px;
+  }
+}
+
+
+@keyframes crazy {
+  0%,
+  100% {
+    right:0%;
+    transform:rotateY(180deg);
+    top:480px;
+  }
+  1% {
+    transform:rotateY(0deg);
+  }
+  25% {
+    top:10px;
+  }
+  49% {
+    transform:rotateY(0deg);
+  }
+  50% {
+    right:90%;
+    top:150px;
+    transform:rotateY(180deg);
+  }
+  75% {
+    top:380px;
+  }
+}
+
+@keyframes flyMid {
+  0%,
+  100% {
+    right:10%;
+    transform:rotateY(180deg);
+    top:220px;
+  }
+  1% {
+    transform:rotateY(0deg);
+  }
+  25% {
+    top:250px;
+  }
+  49% {
+    transform:rotateY(0deg);
+  }
+  50% {
+    right:90%;
+    top:220px;
+    transform:rotateY(180deg);
+  }
+  75% {
+    top:250px;
+  }
+}
+
+@keyframes flyLower {
+  0%,
+  100% {
+    right:10%;
+    transform:rotateY(180deg);
+    top:350px;
+  }
+  1% {
+    transform:rotateY(0deg);
+  }
+  25% {
+    top:380px;
+  }
+  49% {
+    transform:rotateY(0deg);
+  }
+  50% {
+    right:90%;
+    top:350px;
+    transform:rotateY(180deg);
+  }
+  75% {
+    top:380px;
+  }
+}
+
+
 
 //HEART ANIMATION ******************
 

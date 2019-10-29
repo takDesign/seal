@@ -1,6 +1,26 @@
     <body id="loginPage">
         <main class="container-fluid">
             <section class="row">
+            <div class="fish"><img src="Views/imgs/big.png"></div>
+            <div class="fishSmall"><img src="Views/imgs/small.png"></div>
+            <div class="one"><img src="Views/imgs/big.png"></div>
+            <div class="oneSmall"><img src="Views/imgs/small.png"></div>
+            <div class="two"><img src="Views/imgs/big.png"></div>
+            <div class="twoSmall"><img src="Views/imgs/small.png"></div>
+            <div class="three"><img src="Views/imgs/big.png"></div>
+            <div class="threeSmall"><img src="Views/imgs/small.png"></div>
+            <div class="four"><img src="Views/imgs/big.png"></div>
+            <div class="fourSmall"><img src="Views/imgs/small.png"></div>
+            <div class="five"><img src="Views/imgs/big.png"></div>
+            <div class="fiveSmall"><img src="Views/imgs/small.png"></div>
+            <div class="six"><img src="Views/imgs/big.png"></div>
+            <div class="sixSmall"><img src="Views/imgs/small.png"></div>
+            <div class="seven"><img src="Views/imgs/big.png"></div>
+            <div class="sevenSmall"><img src="Views/imgs/small.png"></div>
+            <div class="eight"><img src="Views/imgs/big.png"></div>
+            <div class="eightSmall"><img src="Views/imgs/small.png"></div>
+            <div class="nine"><img src="Views/imgs/big.png"></div>
+            <div class="nineSmall"><img src="Views/imgs/small.png"></div>
                 <div class="col-md-6 h100">
                     <div class="col-md-4 mx-auto d-flex flex-column justify-content-center align-items-center h100">
 
