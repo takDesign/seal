@@ -32,7 +32,7 @@ $("#login").validate({
 			required: "Please enter valid email"
 		},
 		password: {
-			required: "The password must contain at least 1 Uppercase character, lowercase character, number and special charactor."
+			required: "The password must contain at least 1 Uppercase character, lowercase character, number and special character."
 		}
 	}
 });
@@ -72,19 +72,19 @@ $("#register").validate({
 	},
 	messages: {
 		strFirstName: {
-			required: "First name must have at least 2 charactors and contain only letters."
+			required: "First name must have at least 2 characters and contain only letters."
 		},
 		strLastName: {
-			required: "Last name must have at least 2 charactors and contain only letters."
+			required: "Last name must have at least 2 characters and contain only letters."
 		},
 		strEmail: {
 			required: "Please enter valid email"
 		},
 		strUserName: {
-			required: "The user name must have at least 2 charactors and contain only letters."
+			required: "The user name must have at least 2 characters and contain only letters."
 		},
 		strPassword: {
-			required: "The password must contain at least 1 Uppercase character, lowercase character, number and special charactor."
+			required: "The password must contain at least 1 Uppercase character, lowercase character, number and special character."
 		}
 	}
 });
