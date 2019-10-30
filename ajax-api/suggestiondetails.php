@@ -14,7 +14,7 @@ include("checklogin.php");
 <a href="suggestionform.php">make new suggestion</a>
 
 <div class="saltandpepper" data-api="getsuggestions.php?nSuggestionsID=<?=$_GET['id']?>">
-	<h1>{strName}</h1>
+	<h1>{strTitle}</h1>
 	<p>{strContent}</p>
 </div>
 

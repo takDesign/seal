@@ -45,7 +45,7 @@ var VoteSystem = function(thisDOMObject)
 		}
 		
 		$.ajax({
-			url: "savevote.php?suggestionID="+vs.suggestionID+"&nVote="+nVote,
+			url: "savevote.php?nSuggestionsID="+vs.suggestionID+"&nVote="+nVote,
 			dataType: "json",
 			success: function(data)
 			{

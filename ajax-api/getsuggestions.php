@@ -14,17 +14,18 @@ if (isset($_GET['nSuggestionsID']))
 
 $sql = "SELECT 
 suggestions.id, 
-suggestions.strName, 
-suggestions.strSuggestion, 
+suggestions.strContent, 
+suggestions.strTitle, 
 suggestions.nUsersID, 
 users.strUserName, COUNT(votes.id) as totalVotes FROM suggestions 
 LEFT JOIN users ON users.id = suggestions.nUsersID 
-LEFT JOIN votes ON votes.nSuggestionsID=suggestions.id $where GROUP BY suggestions.id ";
+LEFT JOIN votes ON votes.nSuggestionsID=suggestions.id $where GROUP BY suggestions.id";
 
 $results = mysqli_query($con, $sql);
 
 // loop over all the results
 while($arrDataResult = mysqli_fetch_assoc($results))
+// var_dump($arrDataResult); //looks good
 {
 	// put the record, into a associative array indexed by the suggestionID
 	$arrData[$arrDataResult["id"]] = $arrDataResult;

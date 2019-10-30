@@ -81,13 +81,13 @@ $results = mysqli_query($con, $sql);
 			<p><?=$suggestion["dPosted"]?></p>
 			<div class="votesystem">
 				<div class="pos">
-					<a href="#">
-						<div class="heart" data-type="positive"></div>
-					</a>
-					<div class="count"></div>
+					<a href="#"><div class="heart" data-type="positive"></div></a>
+					<div class="voteCount"></div>
 				</div>
-			</div>
-		</div>
+			</div><!-- votesystem -->
+		</div><!-- suggestion -->
+		<br/>
+		<br/>
 	<?php
 	}
 	?>
@@ -106,14 +106,16 @@ $(function()
 
 	// GO GET ALL SUGGESTION DATA
 	$.ajax({
-		url: "getvotedata.php",
+		url: "dummy.json",
 		dataType: "json",
 		success: function(data)
 		{
 			dataPackage = data;
+			// console.log(dataPackage); // JSON is showing up in console ok
 			/// ONLY START CREATING THE OBJECTS ONCE DATA IS RETURNED
 			$(".suggestion").each(function(index, thisDOMObject){
 				new VoteSystem(thisDOMObject, dataPackage);
+				// console.log(thisDOMObject); //object ok - showing up in console
 			})
 		}
 	});
@@ -123,6 +125,7 @@ var VoteSystem = function(thisDOMObject, dataPackage)
 {
 	var vs = this;
 	vs.dataPackage = dataPackage;
+	// console.log(dataPackage);
 	vs.element = thisDOMObject;
 	vs.nSuggestionsID = $(thisDOMObject).data("nSuggestionsID");
 
@@ -140,8 +143,8 @@ var VoteSystem = function(thisDOMObject, dataPackage)
 			success: function(data)
 			{
 				// update the pos votes and neg votes
-				$(".pos .count", vs.element).html(data.posVotes);
-				$(".neg .count", vs.element).html(data.numVotes-data.posVotes);
+				$(".pos .voteCount", vs.element).html(data.posVotes);
+				// $(".neg .voteCount", vs.element).html(data.numVotes-data.posVotes);
 			}
 		})
 	}
@@ -149,10 +152,11 @@ var VoteSystem = function(thisDOMObject, dataPackage)
 	vs.loadVoteHistory = function()
 	{
 		if (typeof vs.dataPackage[vs.nSuggestionsID] != "undefined")
+		// console.log(vs.dataPackage[vs.nSuggestionsID]);
 		{
 			// update the pos votes and neg votes
-			$(".pos .count", vs.element).html(vs.dataPackage[vs.nSuggestionsID].posVotes);
-			$(".neg .count", vs.element).html(vs.dataPackage[vs.nSuggestionsID].numVotes-vs.dataPackage[vs.nSuggestionsID].posVotes);
+			$(".pos .voteCount", vs.element).html(vs.dataPackage[vs.nSuggestionsID].posVotes);
+			// $(".neg .voteCount", vs.element).html(vs.dataPackage[vs.nSuggestionsID].numVotes-vs.dataPackage[vs.nSuggestionsID].posVotes);
 		}
 	}
 

@@ -33,6 +33,8 @@ class Voting
 
         // encode JSON for the API call
         echo json_encode($arrDataResult);
+        // print_r($arrDataResult);
+        // die;
     }
 
     static public function getVoteCount()

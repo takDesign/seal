@@ -19,16 +19,12 @@ include("checklogin.php");
 
 <div id="suggestionlist" class="saltandpepper" data-api="getsuggestions.php" data-callback="bindVoteSystem">
 	<div class="suggestion" data-suggestionid="{id}">
-		<h2>{strName}</h2>
+		<h2>{strTitle}</h2>
 		<p>{strContent}</p>
 		<div class="votesystem">
 			<div class="pos">
 				<a href="#"><div class="heart" data-type="positive"></div></a>
-				<div class="count">{posVotes}</div>
-			</div>
-			<div class="neg">
-				<a href="#"><div class="heart neg" data-type="negative"></div></a>
-				<div class="count">{negVotes}</div>
+				<div class="count">{totalVotes}</div>
 			</div>
 		</div>
 	</div>

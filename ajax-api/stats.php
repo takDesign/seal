@@ -16,12 +16,12 @@ include("checklogin.php");
 
 <h1>Suggestion List</h1>
 <ul class="saltandpepper" data-api="getsuggestions.php" id=>
-	<li><a href="suggestiondetails.php?id={id}">{strName}</a></li>
+	<li><a href="suggestiondetails.php?id={id}">{strTitle}</a></li>
 </ul>
 
 <h2>Users</h2>
 <ul class="saltandpepper" data-api="getusers.php">
-	<li>{strEmail}, {numberOfVotes} votes, {posVotes} positive, {negVotes} negative, {numberSuggestions} total suggestions they created</li>
+	<li>{strUserName}, {numberOfVotes} votes, {numberSuggestions} total suggestions they created</li>
 </ul>
 
 
