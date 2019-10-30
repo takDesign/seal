@@ -11,9 +11,10 @@ class Inside extends Controller
 
 	public function showDashboard()
 	{
-		$this->preTrip();
+		User::checkLoggedIn();
 
 		$arrSuggestions = Suggestion::getAll();
+		// echo $arrSuggestions; // tested OK - has our json object
 
 		$body = $this->loadView("Views/dashboard.php", $arrSuggestions); // Passing data to loadView so suggestionList.php can read it
 
@@ -23,11 +24,6 @@ class Inside extends Controller
 	public function preTrip()
 	{
 		// this function will run before doing any routes inside this controller
-		$nUserID = User::checkLoggedIn();
-		if (!$nUserID)
-		{
-			header("location: index.php?controller=outside&route=login&error=1");
-		}
 	}
 
 	public function postTrip()

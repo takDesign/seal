@@ -32,38 +32,72 @@ class Suggestion
 		}
 	}
 
+	// public static function getAll()
+	// {
+	// 	// go to the database and get a bunch of suggestions
+	// 	$con = Db::con();
+	// 	$results = Db::query(
+	// 		$con,
+	// 		"SELECT suggestions.id,
+	// 		suggestions.strTitle,
+	// 		suggestions.strContent,
+	// 		suggestions.dPosted,
+	// 		users.strUserName AS strUserName
+	// 		FROM suggestions 
+	// 		LEFT JOIN users ON users.id=suggestions.nUsersID
+	// 		WHERE users.id
+	// 		ORDER BY suggestions.dPosted DESC
+	// 		"
+	// 	);
+
+	// 	while ($suggestion = mysqli_fetch_assoc($results)) {
+	// 		$arrSuggestions[] = new Suggestion(
+	// 			$suggestion["id"],
+	// 			$suggestion["strTitle"],
+	// 			$suggestion["strContent"],
+	// 			$suggestion["dPosted"],
+	// 			$suggestion["strUserName"]
+	// 		);
+	// 	}
+	// 	return $arrSuggestions;
+	// }
+
+	//NEW FUNCTION to get all suggestions
 	public static function getAll()
 	{
-		// go to the database and get a bunch of suggestions plus votes
 		$con = Db::con();
-		$results = Db::query(
-			$con,
-			$where = "";
-			if (isset($_GET['nSuggestionsID']))
-			{
-				$where = "WHERE suggestions.id=".$_GET['nSuggestionsID'];
-			}
-
-			$sql = "SELECT suggestions.id, 
-			suggestions.strUserName, 
-			suggestions.strContent, 
-			suggestions.nUsersID, 
-			users.strUserName, 
-			COUNT(votes.id) as totalVotes, SUM(nVotes) as posVotes FROM suggestions 
-			LEFT JOIN users ON users.id = suggestions.nUsersID 
-			LEFT JOIN votes ON votes.nSuggestionsID=suggestions.id $where GROUP BY suggestions.id "
-		);
-
-		while ($suggestion = mysqli_fetch_assoc($results)) {
-			$arrSuggestions[] = new Suggestion(
-				$suggestion["id"],
-				$suggestion["strTitle"],
-				$suggestion["strContent"],
-				$suggestion["dPosted"],
-				$suggestion["strUserName"]
-			);
+		// this gets the stats for the current suggestion
+		$where = "";
+		if (isset($_GET['nSuggestionsID']))
+		{
+			$where = "WHERE suggestions.id=".$_GET['nSuggestionsID'];
 		}
-		return $arrSuggestions;
+
+		$sql = "SELECT 
+		suggestions.id, 
+		suggestions.strTitle,
+		suggestions.strContent,
+		suggestions.dPosted,
+		suggestions.nUsersID, 
+		users.strUserName AS strUserName, 
+		COUNT(votes.id) as totalVotes FROM suggestions 
+		LEFT JOIN users ON users.id = suggestions.nUsersID 
+		LEFT JOIN votes ON votes.nSuggestionsID=suggestions.id 
+		$where GROUP BY suggestions.id
+		ORDER BY suggestions.dPosted DESC";
+
+		$results = mysqli_query($con, $sql);
+
+		// loop over all the results
+		while($arrDataResult = mysqli_fetch_assoc($results))
+		// var_dump($arrDataResult); //looks good
+		{
+			// put the record, into a associative array indexed by the suggestionID
+			$arrData[$arrDataResult["id"]] = $arrDataResult;
+		}
+		// turn into JSON for API call
+		return json_encode($arrData);
+		// echoed and can see in header of dashboard
 	}
 
 	// public static function get($id)

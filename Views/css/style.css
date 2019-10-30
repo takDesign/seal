@@ -142,7 +142,7 @@ hr.shortSeparator {
 }
 
 body#loginPage {
-  background-image: url("../imgs/bg-login.jpg");
+  background-image: url("../imgs/backgroundMinusFish.png");
   background-size: cover;
   background-position: center center;
   height: 100vh;
@@ -154,9 +154,28 @@ body#loginPage {
   height: 10rem;
 }
 
-#loginForm {
+.error {
+  color: #dc3545;
+  font-size: 14px;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+}
+
+.formWrapper {
   background: whitesmoke;
   border-radius: .70rem;
+}
+
+.formWrapper #inputUsername-error,
+.formWrapper #inputPassword-error,
+.formWrapper #inputFirstName-error,
+.formWrapper #inputLastName-error,
+.formWrapper #inputEmail-error {
+  color: #dc3545;
+  font-size: 14px;
 }
 
 #loginText {
@@ -180,20 +199,33 @@ body#loginPage {
   height: 100vh;
 }
 
-.form-control {
+.form {
   border-radius: .50rem;
   color: #245e62;
   font-family: "Raleway", sans-serif;
   font-weight: 400;
   background-color: #E8E8E8;
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.form-control:focus {
+.form:focus {
   color: #245e62;
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   background-color: #E8E8E8;
   box-shadow: 0 0 0 0.1rem #6bc4d1;
+}
+
+.fieldset .note {
+  line-height: 1;
 }
 
 .fieldset a {
@@ -257,12 +289,46 @@ body#loginPage {
 }
 
 .accountCol {
+  position: sticky;
+  height: 100vh;
+  overflow: hidden;
   border-radius: 0px 50px 0px 0px;
   background-color: whitesmoke;
   /* For browsers that do not support gradients */
   background-image: linear-gradient(#245e62, #6bc4d1);
   /* Standard syntax (must be last) */
   background-size: cover;
+}
+
+@media (max-width: 576px) {
+  .accountCol {
+    position: block;
+    height: 35vh;
+    border-radius: 0px 0px 60px 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .accountCol .dashBubbles {
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.accountCol .statMenuMobile {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .accountCol .statMenuMobile {
+    display: none;
+  }
+  .accountCol .statMenuMobile a {
+    color: whitesmoke;
+    float: right;
+    text-transform: uppercase;
+    font-family: "Raleway", sans-serif;
+  }
 }
 
 .accountCol .h2 {
@@ -277,9 +343,324 @@ body#loginPage {
   font-weight: 700;
 }
 
+.accountCol ul {
+  margin-left: -2rem;
+  margin-top: 20rem;
+}
+
+@media (max-width: 576px) {
+  .accountCol ul {
+    margin-top: 2rem;
+  }
+}
+
+.accountCol ul li {
+  list-style: none;
+}
+
+.accountCol ul li a {
+  color: whitesmoke;
+  font: "Raleway", sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
 img.dashBubbles {
   width: 50%;
   overflow: hidden;
+}
+
+/* FISH ANIMATION---------------------------------*/
+.oneSmall {
+  animation: 14s fly infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.one {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 15s fly infinite linear;
+}
+
+.twoSmall {
+  animation: 16s flyMid infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.two {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 18s flyMid infinite linear;
+}
+
+.threeSmall {
+  animation: 20s flyMid infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.three {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 22s flyMid infinite linear;
+}
+
+.fourSmall {
+  animation: 20s flyLower infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.four {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 22s flyLower infinite linear;
+}
+
+.fiveSmall {
+  animation: 20s flyLower infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.five {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 22s flyLower infinite linear;
+}
+
+.sixSmall {
+  animation: 15s flyLower infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.six {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 22s flyLower infinite linear;
+}
+
+.sevenSmall {
+  animation: 15s flyLower infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.seven {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 22s flyLower infinite linear;
+}
+
+.eightSmall {
+  animation: 15s flyLowest infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.eight {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 22s flyLowest infinite linear;
+}
+
+.nineSmall {
+  animation: 15s flyLowest infinite linear;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.nine {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 22s flyLowest infinite linear;
+}
+
+.fishSmall {
+  animation: 12s fly infinite linear;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+}
+
+.fish {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  right: 50%;
+  position: absolute;
+  animation: 10s fly infinite linear;
+}
+
+@keyframes fly {
+  0%,
+  100% {
+    right: 10%;
+    transform: rotateY(180deg);
+    top: 120px;
+  }
+  1% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    top: 180px;
+  }
+  49% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    right: 90%;
+    top: 150px;
+    transform: rotateY(180deg);
+  }
+  75% {
+    top: 90px;
+  }
+}
+
+@keyframes flyLowest {
+  0%,
+  100% {
+    right: 0%;
+    transform: rotateY(180deg);
+    top: 380px;
+  }
+  1% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    top: 80px;
+  }
+  49% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    right: 90%;
+    top: 150px;
+    transform: rotateY(180deg);
+  }
+  75% {
+    top: 380px;
+  }
+}
+
+@keyframes crazy {
+  0%,
+  100% {
+    right: 0%;
+    transform: rotateY(180deg);
+    top: 480px;
+  }
+  1% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    top: 10px;
+  }
+  49% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    right: 90%;
+    top: 150px;
+    transform: rotateY(180deg);
+  }
+  75% {
+    top: 380px;
+  }
+}
+
+@keyframes flyMid {
+  0%,
+  100% {
+    right: 10%;
+    transform: rotateY(180deg);
+    top: 220px;
+  }
+  1% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    top: 250px;
+  }
+  49% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    right: 90%;
+    top: 220px;
+    transform: rotateY(180deg);
+  }
+  75% {
+    top: 250px;
+  }
+}
+
+@keyframes flyLower {
+  0%,
+  100% {
+    right: 10%;
+    transform: rotateY(180deg);
+    top: 350px;
+  }
+  1% {
+    transform: rotateY(0deg);
+  }
+  25% {
+    top: 380px;
+  }
+  49% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    right: 90%;
+    top: 350px;
+    transform: rotateY(180deg);
+  }
+  75% {
+    top: 380px;
+  }
 }
 
 .heart {
@@ -322,6 +703,12 @@ img.dashBubbles {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   color: #245e62;
+}
+
+@media (max-width: 576px) {
+  .suggestCol .h2 {
+    display: none;
+  }
 }
 
 .suggestCol input {
@@ -370,4 +757,31 @@ img.dashBubbles {
 
 .statsCol {
   background-color: whitesmoke;
+  position: sticky;
+  height: 100vh;
+}
+
+@media (max-width: 576px) {
+  .statsCol {
+    display: none;
+  }
+}
+
+.statsCol ul {
+  text-align: right;
+  padding: 0;
+  margin-top: 10rem;
+}
+
+.statsCol ul li {
+  list-style: none;
+  font-family: "Raleway", sans-serif;
+  color: #245e62;
+  text-transform: uppercase;
+  padding: 9px;
+}
+
+.statsCol ul li h1 {
+  color: #d99c50;
+  font-weight: 900;
 }

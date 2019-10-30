@@ -23,6 +23,7 @@ $(function()
 	
 });
 
+
 var TemplateParser = function(dataObject,templateObject)
 {
 	var templateHTML = templateObject.innerHTML;

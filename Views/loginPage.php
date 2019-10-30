@@ -1,6 +1,26 @@
     <body id="loginPage">
-        <main role="main" class="container-fluid">
+        <main class="container-fluid">
             <section class="row">
+            <div class="fish"><img src="Views/imgs/big.png"></div>
+            <div class="fishSmall"><img src="Views/imgs/small.png"></div>
+            <div class="one"><img src="Views/imgs/big.png"></div>
+            <div class="oneSmall"><img src="Views/imgs/small.png"></div>
+            <div class="two"><img src="Views/imgs/big.png"></div>
+            <div class="twoSmall"><img src="Views/imgs/small.png"></div>
+            <div class="three"><img src="Views/imgs/big.png"></div>
+            <div class="threeSmall"><img src="Views/imgs/small.png"></div>
+            <div class="four"><img src="Views/imgs/big.png"></div>
+            <div class="fourSmall"><img src="Views/imgs/small.png"></div>
+            <div class="five"><img src="Views/imgs/big.png"></div>
+            <div class="fiveSmall"><img src="Views/imgs/small.png"></div>
+            <div class="six"><img src="Views/imgs/big.png"></div>
+            <div class="sixSmall"><img src="Views/imgs/small.png"></div>
+            <div class="seven"><img src="Views/imgs/big.png"></div>
+            <div class="sevenSmall"><img src="Views/imgs/small.png"></div>
+            <div class="eight"><img src="Views/imgs/big.png"></div>
+            <div class="eightSmall"><img src="Views/imgs/small.png"></div>
+            <div class="nine"><img src="Views/imgs/big.png"></div>
+            <div class="nineSmall"><img src="Views/imgs/small.png"></div>
                 <div class="col-md-6 h100">
                     <div class="col-md-4 mx-auto d-flex flex-column justify-content-center align-items-center h100">
 
@@ -16,32 +36,31 @@
                 </div><!-- //col6 -->
 
                 <div class="col-12 col-md-4 d-flex align-items-center h100">
-                    <div id="loginForm" class="d-flex mx-auto px-md-5 py-md-5 shadow-lg formWrapper">
-                        <form method="post" action="index.php" class="form-signin px-3 py-3 needs-validation" novalidate>
+                    <div class="d-flex mx-auto px-md-5 py-md-5 shadow-lg formWrapper">
+                        <form id="login" method="post" action="index.php" class="form-signin px-3 py-3 needs-validation" novalidate>
 
                             <input type="hidden" name="controller" value="outside">
                             <input type="hidden" name="route" value="processlogin">
                             <!-- selecting controller and route upon form submission -->
                             <div class="formHeader">
                                 <p class="h2">Sign in</p>
+                                <p>To see the latest suggestions</p>
                                 <?php
                                 if (isset($_GET['error'])) {
-                                    echo '<p style="color:red;">Incorrect username or password.</p>';
+                                    echo '<p class="error">Incorrect Email or Password.</p>';
                                 }
                                 ?>
-                                <p>To see the latest suggestions</p>
                             </div>
 
                             <div class="fieldset">
-                                <label for="validationCustom01" class="sr-only">Username</label>
-                                <input type="text" name="username" id="inputEmail" class="form-control needs-validation" placeholder="Username" required autofocus>
-                                <div class="invalid-feedback">Uh oh, can you check your username?</div>
+                                <label for="inputEmail" class="sr-only">Email</label>
+                                <input type="text" name="email" id="inputEmail" class="form" placeholder="Email" autofocus>
                             </div>
 
                             <div class="fieldset mt-2">
-                                <label for="validationCustom02" class="sr-only">Password</label>
-                                <input type="password" name="password" id="inputPassword" class="form-control needs-validation" placeholder="Password" required>
-                                <div class="invalid-feedback">Uh oh, can you try your password again?</div>
+                                <label for="inputPassword" class="sr-only">Password</label>
+                                <input type="password" name="password" id="inputPassword" class="form password" placeholder="Password">
+                                <small class="note">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor.</small>
                             </div>
 
                             <div class="fieldset mt-4 mb-4">
@@ -49,7 +68,7 @@
                             </div>
 
                             <div class="fieldset mt-3 mb-3">
-                                <p class="finePrint">Not a member? <a href="#" type="button" data-toggle="modal" data-target="#registerModal" class="highlight">Create an account</a></p>
+                                <p class="finePrint">Not a member? <a href="#" data-toggle="modal" data-target="#registerModal" class="highlight">Create an account</a></p>
                             </div>
                         </form>
                     </div>
@@ -64,8 +83,8 @@
                                 </div>
 
                                 <div class="modal-body">
-                                    <div id="registerForm" class="text-center mx-auto px-md-5 py-md-2 formWrapper">
-                                        <form method="post" action="index.php" class="form-signin needs-validation" novalidate>
+                                    <div class="text-center mx-auto px-md-5 py-md-2 formWrapper">
+                                        <form id="register" method="post" action="index.php" class="form-signin" novalidate>
 
                                             <input type="hidden" name="controller" value="outside">
                                             <input type="hidden" name="route" value="createNewUser">
@@ -74,47 +93,48 @@
                                             <img id="loginLogo" class="mx-auto mb-3" src="Views/imgs/logo.png" alt="Suggest logo icon">
 
                                             <div class="fieldset">
-                                                <label for="validationCustom01" class="sr-only">First Name</label>
-                                                <input type="text" name="strFirstName" id="inputFirstName" class="form-control needs-validation" placeholder="First Name" required autofocus>
-                                                <div class="invalid-feedback">Sorry, we need your first name!</div>
+                                                <label for="inputFirstName" class="sr-only">First Name</label>
+                                                <input type="text" name="strFirstName" id="inputFirstName" class="form firstName" placeholder="First Name" required>
+                                                <!-- <div class="invalid-feedback">The first name must have at least 2 charactors and contain only letters.</div> -->
                                                 <?php if (isset($_GET['firstNameError'])) {
-                                                    echo '<div style="color: red;">Please use only letters for your first name</div>';
+                                                    echo '<div class ="invalid-feedback">The first name must have at least 2 charactors and contain only letters.</div>';
                                                 } ?>
                                             </div>
 
                                             <div class="fieldset mt-2">
-                                                <label for="validationCustom01" class="sr-only">Last Name</label>
-                                                <input type="text" name="strLastName" id="inputLastName" class="form-control needs-validation" placeholder="Last Name" required>
-                                                <div class="invalid-feedback">Sorry, we need your last name!</div>
+                                                <label for="inputLastName" class="sr-only">Last Name</label>
+                                                <input type="text" name="strLastName" id="inputLastName" class="form lastName" placeholder="Last Name" required>
+                                                <!-- <div class="invalid-feedback">The last name must have at least 2 charactors and contain only letters.</div> -->
                                                 <?php if (isset($_GET['lastNameError'])) {
-                                                    echo '<div style="color: red;">Please use only letters for your last name</div>';
+                                                    echo '<div class ="invalid-feedback">The last name must have at least 2 charactors and contain only letters.</div>';
                                                 } ?>
                                             </div>
 
                                             <div class="fieldset mt-2">
-                                                <label for="validationCustom01" class="sr-only">Email Address</label>
-                                                <input type="email" name="strEmail" id="inputEmail" class="form-control needs-validation" placeholder="Email" required>
-                                                <div class="invalid-feedback">Sorry, we need you email!</div>
+                                                <label for="inputEmail" class="sr-only">Email Address</label>
+                                                <input type="email" name="strEmail" id="inputEmail" class="form email" placeholder=" Email" required>
+                                                <!-- <div class="invalid-feedback">Please enter a valid email</div> -->
                                                 <?php if (isset($_GET['emailError'])) {
-                                                    echo '<div style="color: red;">Please enter a valid email</div>';
+                                                    echo '<div class ="invalid-feedback">Please enter a valid email</div>';
                                                 } ?>
                                             </div>
 
                                             <div class="fieldset mt-2">
-                                                <label for="validationCustom01" class="sr-only">Username</label>
-                                                <input type="text" name="strUserName" id="inputUsername" class="form-control needs-validation" placeholder="Username" required>
-                                                <div class="invalid-feedback">Sorry, we need a username!</div>
+                                                <label for="inputUsername" class="sr-only">Username</label>
+                                                <input type="text" name="strUserName" id="inputUsername" class="form userName" placeholder="Username" required>
+                                                <!-- <div class="invalid-feedback">The user name must have at least 2 charactors and contain only letters.</div> -->
                                                 <?php if (isset($_GET['userNameError'])) {
-                                                    echo '<div style="color: red;">Please enter a real username</div>';
+                                                    echo '<div class ="invalid-feedback">The user name must have at least 2 charactors and contain only letters.</div>';
                                                 } ?>
                                             </div>
 
                                             <div class="fieldset mt-2">
-                                                <label for="validationCustom02" class="sr-only">Password</label>
-                                                <input type="password" name="strPassword" id="inputPassword" class="form-control needs-validation" placeholder="Password" required>
-                                                <div class="invalid-feedback">Sorry, we need a password!</div>
+                                                <label for="inputPassword" class="sr-only">Password</label>
+                                                <input type="password" name="strPassword" id="inputPassword" class="form password" placeholder="Password" required>
+                                                <small class="note">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor</small>
+                                                <!-- <div class="invalid-feedback">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor</div> -->
                                                 <?php if (isset($_GET['passwordError'])) {
-                                                    echo '<div style="color: red;">Please enter a password that have at least: 8charactors, 1upper case letter, 1lower case letter and 1number.</div>';
+                                                    echo '<div style="color: red;">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor</div>';
                                                 } ?>
                                             </div>
                                     </div>
@@ -141,10 +161,11 @@
             </section><!--  //BS row -->
         </main>
 
-        <!-- JS FORM VALIDATION -->
-        <script src="Views/js/form-validation-plugin.js"></script>
         <!-- BOOTSTRAP JQUERY -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!-- JS FORM VALIDATION -->
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+        <script src="Views/js/form-validation-plugin.js"></script>
         <!-- BOOTSTRAP POPPER JS -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <!-- BOOTSTRAP JS -->

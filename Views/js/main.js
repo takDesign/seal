@@ -1,5 +1,3 @@
-
-
 $(function()
 {
 	$(".saltandpepper").each(function(index, templateObject)
@@ -45,7 +43,7 @@ var VoteSystem = function(thisDOMObject)
 		}
 		
 		$.ajax({
-			url: "savevote.php?nSuggestionsID="+vs.suggestionID+"&nVote="+nVote,
+			url: "savevote.php?suggestionID="+vs.suggestionID+"&nVote="+nVote,
 			dataType: "json",
 			success: function(data)
 			{
