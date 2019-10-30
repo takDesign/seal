@@ -95,18 +95,18 @@
                                             <div class="fieldset">
                                                 <label for="inputFirstName" class="sr-only">First Name</label>
                                                 <input type="text" name="strFirstName" id="inputFirstName" class="form firstName" placeholder="First Name" required>
-                                                <!-- <div class="invalid-feedback">The first name must have at least 2 charactors and contain only letters.</div> -->
+                                                <!-- <div class="invalid-feedback">The first name must have at least 2 characters and contain only letters.</div> -->
                                                 <?php if (isset($_GET['firstNameError'])) {
-                                                    echo '<div class ="invalid-feedback">The first name must have at least 2 charactors and contain only letters.</div>';
+                                                    echo '<div class ="invalid-feedback">The first name must have at least 2 characters and contain only letters.</div>';
                                                 } ?>
                                             </div>
 
                                             <div class="fieldset mt-2">
                                                 <label for="inputLastName" class="sr-only">Last Name</label>
                                                 <input type="text" name="strLastName" id="inputLastName" class="form lastName" placeholder="Last Name" required>
-                                                <!-- <div class="invalid-feedback">The last name must have at least 2 charactors and contain only letters.</div> -->
+                                                <!-- <div class="invalid-feedback">The last name must have at least 2 characters and contain only letters.</div> -->
                                                 <?php if (isset($_GET['lastNameError'])) {
-                                                    echo '<div class ="invalid-feedback">The last name must have at least 2 charactors and contain only letters.</div>';
+                                                    echo '<div class ="invalid-feedback">The last name must have at least 2 characters and contain only letters.</div>';
                                                 } ?>
                                             </div>
 
@@ -122,19 +122,19 @@
                                             <div class="fieldset mt-2">
                                                 <label for="inputUsername" class="sr-only">Username</label>
                                                 <input type="text" name="strUserName" id="inputUsername" class="form userName" placeholder="Username" required>
-                                                <!-- <div class="invalid-feedback">The user name must have at least 2 charactors and contain only letters.</div> -->
+                                                <!-- <div class="invalid-feedback">The user name must have at least 2 characters and contain only letters.</div> -->
                                                 <?php if (isset($_GET['userNameError'])) {
-                                                    echo '<div class ="invalid-feedback">The user name must have at least 2 charactors and contain only letters.</div>';
+                                                    echo '<div class ="invalid-feedback">The user name must have at least 2 characters and contain only letters.</div>';
                                                 } ?>
                                             </div>
 
                                             <div class="fieldset mt-2">
                                                 <label for="inputPassword" class="sr-only">Password</label>
                                                 <input type="password" name="strPassword" id="inputPassword" class="form password" placeholder="Password" required>
-                                                <small class="note">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor</small>
-                                                <!-- <div class="invalid-feedback">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor</div> -->
+                                                <small class="note">The password must contain at least 1 uppercase character, 1 lowercase character, 1 number and 1 special character.</small>
+                                                <!-- <div class="invalid-feedback">The password must contain at least 1 Uppercase character, lowercase character, number and special character</div> -->
                                                 <?php if (isset($_GET['passwordError'])) {
-                                                    echo '<div style="color: red;">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor</div>';
+                                                    echo '<div style="color: red;">The password must contain at least 1 Uppercase character, lowercase character, number and special character</div>';
                                                 } ?>
                                             </div>
                                     </div>
