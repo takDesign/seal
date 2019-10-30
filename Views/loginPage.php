@@ -60,7 +60,7 @@
                             <div class="fieldset mt-2">
                                 <label for="inputPassword" class="sr-only">Password</label>
                                 <input type="password" name="password" id="inputPassword" class="form password" placeholder="Password">
-                                <small class="note">The password must contain at least 1 Uppercase character, lowercase character, number and special charactor.</small>
+                                <small class="note">The password must contain at least 1 uppercase character, 1 lowercase character, 1 number and 1 special character.</small>
                             </div>
 
                             <div class="fieldset mt-4 mb-4">
