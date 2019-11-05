@@ -16,6 +16,9 @@
                     <p class="mt-4 h2">Hey <?= $_SESSION["username"] ?>!</p>
                     <p class="h3">This is your dashboard</p>
 
+                    <h3>Welcome to Seal!</h3>
+                    <p>Here you can make a suggestion on how you think we can improve the VanArts experience. Users can make and vote on suggestions. The most popular suggestion will be considered by head office. Let's make a change!</p>
+
                     <ul>
                         <!-- <li><a href="">Account Details</a></li>
                         <li><a href="">Suggestions</a></li>
